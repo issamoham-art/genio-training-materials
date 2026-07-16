@@ -1,0 +1,270 @@
+<style>
+.sf-wrap{font-family:'Segoe UI',Calibri,Arial,sans-serif;color:#1a1a2e;line-height:1.7;font-size:16px;max-width:960px;margin:0 auto;background:#FAFBFC}
+.sf-hdr{background:linear-gradient(135deg,#002060,#0070C0);color:#fff;padding:45px 20px 35px;text-align:center;border-radius:10px 10px 0 0}
+.sf-hdr h1{font-family:'Century Gothic','Trebuchet MS',sans-serif;font-size:2.1em;margin:0 0 8px}
+.sf-hdr .sub{font-size:1.2em;color:#FBAE40;margin-bottom:6px}
+.sf-hdr .trk{font-size:.92em;opacity:.85}
+.sf-hdr .br{font-size:.82em;margin-top:12px;opacity:.7}
+.sf-tn{display:flex;flex-wrap:wrap;gap:4px;background:#002060;padding:10px 10px 0}
+.sf-tb{padding:10px 16px;border:none;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;border-radius:8px 8px 0 0;font-size:.86em;font-weight:500;transition:all .2s}
+.sf-tb:hover{background:rgba(255,255,255,.3)}
+.sf-tb.a{background:#fff;color:#002060;font-weight:700}
+.sf-tc{display:none;background:#fff;padding:28px 32px;border-radius:0 0 10px 10px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sf-tc.a{display:block}
+.sf-tc h2{font-family:'Century Gothic',sans-serif;color:#002060;font-size:1.5em;margin:0 0 15px;padding-bottom:8px;border-bottom:2px solid #D6E4F0}
+.sf-tc h3{color:#0070C0;font-size:1.1em;margin:18px 0 8px}
+.sf-tc h4{color:#002060;font-size:1em;margin:14px 0 6px}
+.sf-ab{width:100%;text-align:left;padding:13px 18px;background:#D6E4F0;border:1px solid #e0e4ea;border-radius:6px;margin:4px 0;cursor:pointer;font-size:.97em;font-weight:600;color:#002060;transition:all .2s}
+.sf-ab:hover,.sf-ab.o{background:#0070C0;color:#fff;border-radius:6px 6px 0 0}
+.sf-ac{display:none;padding:18px;border:1px solid #e0e4ea;border-top:none;border-radius:0 0 6px 6px;margin-bottom:6px}
+.sf-ac.o{display:block}
+.sf-ax{background:#FFF2CC;border-left:4px solid #FBAE40;border-radius:6px;padding:15px 20px;margin:15px 0}
+.sf-ax .bt{font-weight:700;color:#002060;margin-bottom:6px;font-size:1.02em}
+.sf-nb{background:#D6E4F0;border-left:4px solid #0070C0;border-radius:6px;padding:12px 18px;margin:12px 0;font-size:.94em}
+.sf-nb strong{color:#002060}
+.sf-fb{background:#f0f4f8;border:1px solid #e0e4ea;border-radius:6px;padding:10px 18px;margin:10px 0;font-family:Consolas,monospace;font-size:.94em;text-align:center;color:#002060}
+.sf-av{background:linear-gradient(135deg,#FBAE40,#F26B43);color:#002060;border-radius:8px;padding:12px 18px;margin:18px 0 10px;text-align:center;font-weight:700;font-size:1.05em}
+.sf-ws{border:2px dashed #e0e4ea;border-radius:8px;padding:28px;margin:12px 0;text-align:center;color:#888;font-style:italic;min-height:100px}
+.sf-wrap table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:.91em}
+.sf-wrap th{background:#002060;color:#fff;padding:9px 10px;text-align:center;font-weight:600}
+.sf-wrap td{padding:7px 10px;text-align:center;border-bottom:1px solid #e0e4ea}
+.sf-wrap tr:nth-child(even) td{background:#f7f8fa}
+.sf-wrap ul,.sf-wrap ol{margin:8px 0 12px 22px}
+.sf-wrap li{margin-bottom:5px}
+.sf-wrap p{margin-bottom:10px}
+.sf-ft{text-align:center;padding:22px;color:#888;font-size:.82em;margin-top:10px}
+.sf-ft .bf{color:#0070C0;font-weight:600}
+@media(max-width:768px){.sf-tb{font-size:.76em;padding:8px 10px}.sf-tc{padding:16px}.sf-wrap table{font-size:.82em}.sf-wrap th,.sf-wrap td{padding:5px 6px}}
+</style>
+<div class="sf-wrap">
+<div class="sf-hdr">
+<h1>Sales Forecasting Methods &amp; Target Distribution</h1>
+<div class="sub">Participant Manual</div>
+<div class="trk">Track 1: Senior MR &rarr; First Line Manager &nbsp;|&nbsp; Track 2: Senior FLM &rarr; Second Line Manager</div>
+<div class="br">GENIO Talent Development&reg; &bull; Grow Your Talent</div>
+</div>
+<div class="sf-tn">
+<button class="sf-tb a" onclick="sfTab(0)">1. Introduction</button>
+<button class="sf-tb" onclick="sfTab(1)">2. Quantitative</button>
+<button class="sf-tb" onclick="sfTab(2)">3. Qualitative</button>
+<button class="sf-tb" onclick="sfTab(3)">4-5. Targets</button>
+<button class="sf-tb" onclick="sfTab(4)">6-8. CRM &amp; Data</button>
+<button class="sf-tb" onclick="sfTab(5)">9. Integration</button>
+<button class="sf-tb" onclick="sfTab(6)">10-11. Takeaways</button>
+</div>
+<div class="sf-tc a">
+<h2>1. Introduction to Sales Forecasting</h2>
+<button class="sf-ab" onclick="sfAcc(this)">1.1 What is Sales Forecasting?</button>
+<div class="sf-ac">
+<p>Sales forecasting is estimating future sales revenue. A <strong>forecast</strong> predicts what WILL happen; a <strong>target</strong> defines what you WANT to happen.</p>
+<div class="sf-ax"><div class="bt">Why It Matters</div><ul><li>Resource allocation &amp; territory sizing</li><li>Inventory &amp; supply chain readiness</li><li>Hiring, training &amp; development budgets</li><li>Credible, committable targets</li><li>Early gap identification</li><li>Leadership credibility through data-driven planning</li></ul></div>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">1.2 Forecasting vs. Target Setting</button>
+<div class="sf-ac">
+<table><tr><th>Dimension</th><th>Forecast</th><th>Target</th></tr>
+<tr><td>Purpose</td><td>Predict</td><td>Define aspiration</td></tr>
+<tr><td>Basis</td><td>Data &amp; trends</td><td>Forecast + ambition</td></tr>
+<tr><td>Direction</td><td>Bottom-up</td><td>Top-down reconciled</td></tr>
+<tr><td>Flexibility</td><td>Updates with data</td><td>Fixed for period</td></tr>
+<tr><td>Owner</td><td>Analytics / SM</td><td>Sales Leadership</td></tr></table>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">1.3 External &amp; Internal Factors</button>
+<div class="sf-ac">
+<h4>External</h4><ul><li>Market growth &amp; therapy trends (IQVIA)</li><li>Competitor launches, pricing, promotion</li><li>Regulatory &amp; formulary changes</li><li>Economic &amp; insurance shifts</li><li>Seasonal patterns (flu, Ramadan)</li></ul>
+<h4>Internal</h4><ul><li>Sales force capacity &amp; vacancy</li><li>Product lifecycle stage</li><li>Promotional investment</li><li>Distribution changes</li><li>Pipeline (new indications, line extensions)</li></ul>
+</div>
+</div>
+<div class="sf-tc">
+<h2>2. Quantitative Forecasting Methods</h2>
+<button class="sf-ab" onclick="sfAcc(this)">2.1 Moving Average</button>
+<div class="sf-ac">
+<div class="sf-fb">SMA = (Sum of last N periods) &divide; N</div>
+<p>Smooths short-term fluctuations. Best for stable markets, mature products, as a baseline anchor.</p>
+<p><strong>Limitations:</strong> Lags behind rapid changes, treats all periods equally, choice of N matters greatly.</p>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">Activity: NovaCure Moving Average (20 min)</button>
+<div class="sf-ac">
+<div class="sf-av">ACTIVITY: Moving Average &mdash; NovaCure</div>
+<p>You are the FLM for <strong>NovaCure</strong> (Apex Pharma, cardiovascular). Calculate the 3-period MA for 2026 and compare to company targets.</p>
+<table><tr><th>Rep</th><th>Territory</th><th>2023</th><th>2024</th><th>2025</th><th>3-Yr MA</th><th>2026 Target</th></tr>
+<tr><td>Ahmad</td><td>Heliopolis</td><td>4.2M</td><td>4.8M</td><td>5.1M</td><td></td><td>6.5M</td></tr>
+<tr><td>Layla</td><td>Nasr City</td><td>3.1M</td><td>3.4M</td><td>3.6M</td><td></td><td>5.2M</td></tr>
+<tr><td>Omar</td><td>Maadi</td><td>2.5M</td><td>2.2M</td><td>2.0M</td><td></td><td>3.8M</td></tr>
+<tr><td>Dina</td><td>Downtown</td><td>5.8M</td><td>6.2M</td><td>6.5M</td><td></td><td>7.0M</td></tr></table>
+<p><strong>Questions:</strong> Which target is most realistic? Most aggressive? Omar is declining &mdash; what does the MA say about his 3.8M target? Should you use 2-period or 3-period MA?</p>
+<div class="sf-ws">Your calculations here</div>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">2.2 Market Share-Based Forecasting</button>
+<div class="sf-ac">
+<div class="sf-fb">Forecast = Target MS% &times; Total Market Size</div>
+<p>Powerful in pharma because IQVIA provides reliable total market data. Use <strong>Geo-Share</strong> to compare each territory's market size as a % of total &mdash; territories with high geo-share but low MS are your biggest opportunities.</p>
+<ul><li><strong>Declining MS:</strong> Defensive strategy before aggressive targets</li>
+<li><strong>Low MS in large market:</strong> Untapped potential, needs capability building</li>
+<li><strong>High MS in small market:</strong> Limited growth ceiling</li>
+<li><strong>Competitor &gt;40%:</strong> Targeted displacement, not just more calls</li></ul>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">Activity: BronchEase Market Share (15 min)</button>
+<div class="sf-ac">
+<div class="sf-av">ACTIVITY: Market Share Forecast &mdash; BronchEase</div>
+<p><strong>BronchEase</strong> (MedVance Pharma, respiratory). Target: grow from 12% to 20% MS in Alexandria.</p>
+<table><tr><th>Rep</th><th>Territory</th><th>Sales</th><th>MS%</th><th>AirFlow MS%</th><th>Total Mkt</th></tr>
+<tr><td>Yasser</td><td>East Alex</td><td>1.8M</td><td>18%</td><td>35%</td><td>10M</td></tr>
+<tr><td>Nada</td><td>West Alex</td><td>600K</td><td>6%</td><td>42%</td><td>10M</td></tr>
+<tr><td>Fady</td><td>Borg El Arab</td><td>1.2M</td><td>15%</td><td>30%</td><td>8M</td></tr>
+<tr><td>Heba</td><td>Montaza</td><td>400K</td><td>5%</td><td>48%</td><td>8M</td></tr></table>
+<p>Calculate 20% MS forecast per territory. Is uniform 20% realistic when AirFlow dominates? Would differentiated targets work better?</p>
+<div class="sf-ws">Your analysis here</div>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">2.3 Exponential Smoothing (Awareness)</button>
+<div class="sf-ac">
+<div class="sf-fb">Forecast = &alpha; &times; Actual + (1-&alpha;) &times; Previous Forecast</div>
+<p>&alpha; near 1 = responsive but noisy. &alpha; near 0 = smooth but slow. Pharma typical: 0.2-0.4. Key concept: giving more weight to recent data is often more accurate. Many pharma tools (IQVIA Forecaster) use this behind the scenes.</p>
+</div>
+</div>
+<div class="sf-tc">
+<h2>3. Qualitative Forecasting Methods</h2>
+<button class="sf-ab" onclick="sfAcc(this)">3.1 Sales Force Composite</button>
+<div class="sf-ac">
+<p>Aggregates individual rep forecasts. Captures local intelligence no database provides.</p>
+<h4>Process</h4>
+<ol><li>Each rep submits territory forecast from customer knowledge</li>
+<li>Manager reviews, challenges, adjusts based on historical accuracy</li>
+<li>Regional aggregation for district forecast</li>
+<li>Management adjustment for strategic factors</li></ol>
+<h4>Common Pitfalls</h4>
+<ul><li><strong>Sandbagging:</strong> Under-forecasting for easier targets</li>
+<li><strong>Optimism bias:</strong> New reps over-forecast</li>
+<li><strong>Recency bias:</strong> Great Q1 &rarr; linear extrapolation</li>
+<li><strong>Anchoring:</strong> Stuck on last year's numbers</li></ul>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">3.2 Delphi Method</button>
+<div class="sf-ac">
+<p>Structured anonymous expert rounds. Best for new launches, regulatory impact, competitor entry, long-range (3-5yr) planning.</p>
+<ol><li>Round 1: Independent forecasts with rationale</li>
+<li>Round 2: Anonymous results shared; experts revise</li>
+<li>Round 3: Convergence; outliers explain reasoning</li>
+<li>Facilitator synthesizes consensus with range</li></ol>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">Activity: CardioVita Sales Force Composite (25 min)</button>
+<div class="sf-ac">
+<div class="sf-av">ACTIVITY: Sales Force Composite &mdash; CardioVita</div>
+<p><strong>CardioVita</strong> (Zenith Pharma, lipid-lowering). 2025 total: 18.5M. 2026 target: 24M (+30%). New generic LipiClear launched Q4 2025 at 40% lower price.</p>
+<table><tr><th>Rep</th><th>Territory</th><th>Ach%</th><th>Will.</th><th>Ability</th><th>Issue</th></tr>
+<tr><td>Marwan</td><td>Tanta</td><td>105%</td><td>High</td><td>High</td><td>Saturating</td></tr>
+<tr><td>Salma</td><td>Mansoura</td><td>72%</td><td>High</td><td>Med</td><td>New (6 months)</td></tr>
+<tr><td>Adel</td><td>Damanhour</td><td>130%</td><td>Low</td><td>High</td><td>Disengaged</td></tr>
+<tr><td>Noha</td><td>Zagazig</td><td>45%</td><td>Med</td><td>Low</td><td>2 competitor launches</td></tr>
+<tr><td>Bassem</td><td>K. El Sheikh</td><td>92%</td><td>Med</td><td>Med</td><td>Limited upside</td></tr></table>
+<h4>Willingness-Ability Matrix</h4>
+<table><tr><th></th><th>Low Ability</th><th>Med Ability</th><th>High Ability</th></tr>
+<tr><td><strong>High Will.</strong></td><td></td><td>Salma</td><td>Marwan</td></tr>
+<tr><td><strong>Med Will.</strong></td><td>Noha</td><td>Bassem</td><td></td></tr>
+<tr><td><strong>Low Will.</strong></td><td></td><td></td><td>Adel</td></tr></table>
+<p>Roleplay one rep and prepare a 2026 forecast. Would you sandbag or stretch? How would you handle Adel (high ability, low willingness)?</p>
+<div class="sf-ws">Your forecast notes here</div>
+</div>
+</div>
+<div class="sf-tc">
+<h2>4-5. Combining Methods &amp; Target Distribution</h2>
+<button class="sf-ab" onclick="sfAcc(this)">4.1 Triangulation &amp; Scenarios</button>
+<div class="sf-ac">
+<p>No single method is sufficient. Use 2+ and compare:</p>
+<table><tr><th>Method</th><th>Forecast</th><th>Basis</th></tr>
+<tr><td>Moving Average</td><td>30M</td><td>3-year average</td></tr>
+<tr><td>Market Share</td><td>33M</td><td>Current MS &times; market</td></tr>
+<tr><td>Company Target</td><td>42M</td><td>Management ambition</td></tr>
+<tr><td>Growth-Based</td><td>37M</td><td>&times;1.15</td></tr></table>
+<p>Always present <strong>3 scenarios</strong>: Best Case / Most Likely / Worst Case. Single-point forecasts create false confidence.</p>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">5.1 SMART Framework &amp; Distribution Methods</button>
+<div class="sf-ac">
+<p><strong>SMART:</strong> Specific, Measurable, Achievable, Relevant, Time-bound. Every target must pass this test.</p>
+<h4>Distribution Methods</h4>
+<ul><li><strong>Equal:</strong> Same target per territory. Risk: ignores differences.</li>
+<li><strong>Historical:</strong> Based on past contribution. Risk: locks in inequities.</li>
+<li><strong>Market Potential:</strong> Based on geo-share. Risk: ignores current capability.</li>
+<li><strong>Hybrid (recommended):</strong> Weighted combination.<br>Formula: Target = (W1&times;Historical% + W2&times;Potential%) &times; Total</li></ul>
+<p>Weights: 60/40 historical/potential for mature products. 40/60 for growth products.</p>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">Activity: NeuroCalm Target Distribution (20 min)</button>
+<div class="sf-ac">
+<div class="sf-av">ACTIVITY: Target Distribution &mdash; NeuroCalm</div>
+<p><strong>NeuroCalm</strong> (Horizon Pharma, CNS). 2025: 22M. 2026 target: 30M (+36%). No new hires. Rana at 55% achievement. Tarek's spike was a one-time tender. Mostafa lost his key KOL. Amira's market growing fastest (new indication).</p>
+<table><tr><th>Rep</th><th>2025 Sales</th><th>Ach%</th><th>MS Trend</th><th>Total Mkt</th></tr>
+<tr><td>Mostafa</td><td>5.5M</td><td>88%</td><td>15&rarr;12%</td><td>38M</td></tr>
+<tr><td>Rana</td><td>2.8M</td><td>55%</td><td>10&rarr;7%</td><td>32M</td></tr>
+<tr><td>Tarek</td><td>7.2M</td><td>145%</td><td>20&rarr;22%</td><td>35M</td></tr>
+<tr><td>Amira</td><td>4.5M</td><td>102%</td><td>12&rarr;16%</td><td>30M</td></tr>
+<tr><td>Wael</td><td>2.0M</td><td>91%</td><td>8%</td><td>25M</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>22M</strong></td><td></td><td></td><td><strong>160M</strong></td></tr></table>
+<p>Distribute 30M across reps with rationale. One action per territory. How do you handle Tarek's one-time tender spike?</p>
+<div class="sf-ws">Your distribution here</div>
+</div>
+</div>
+<div class="sf-tc">
+<h2>6-8. CRM Data, Limitations &amp; Technology</h2>
+<button class="sf-ab" onclick="sfAcc(this)">6. CRM Metrics for Forecasting</button>
+<div class="sf-ac">
+<table><tr><th>Metric</th><th>Tells You</th><th>Implication</th></tr>
+<tr><td>Coverage %</td><td>Doctors visited</td><td>Low = unfulfilled potential</td></tr>
+<tr><td>Frequency</td><td>Visits per doctor</td><td>Below benchmark = weak voice</td></tr>
+<tr><td>Daily Calls</td><td>Productivity</td><td>Low = capacity/motivation</td></tr>
+<tr><td>A-Class Focus</td><td>Effort allocation</td><td>Misallocated = low ROI</td></tr></table>
+<h4>Reading the Patterns</h4>
+<ul><li><strong>Low coverage + low frequency:</strong> Activity problem &rarr; coverage plan first</li>
+<li><strong>High activity + flat sales:</strong> Effectiveness problem &rarr; skills training</li>
+<li><strong>Coverage &gt;100%:</strong> Calling non-potential &rarr; list optimization</li>
+<li><strong>Solid metrics + declining MS:</strong> Competitive pressure &rarr; investigate</li></ul>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">7. Data Limitations &amp; Workarounds</button>
+<div class="sf-ac">
+<p><strong>Challenges:</strong> Incomplete IQVIA coverage, 6-8 week reporting lag, hospital data gaps, no history for new products, inconsistent CRM entry.</p>
+<p><strong>Workarounds:</strong> Proxy indicators, Sales Force Composite, multiple methods (3+ when data is weak), document all assumptions, sensitivity analysis (&plusmn;20%).</p>
+</div>
+<button class="sf-ab" onclick="sfAcc(this)">8. Technology Tools</button>
+<div class="sf-ac">
+<ul><li><strong>Excel/Sheets:</strong> Pivot tables, FORECAST function, scenarios</li>
+<li><strong>IQVIA Forecaster:</strong> Industry-standard market-level</li>
+<li><strong>Veeva CRM Analytics:</strong> Territory-level insights</li>
+<li><strong>Power BI / Tableau:</strong> Trend visualization</li>
+<li><strong>AI/ML:</strong> Emerging, best at national/regional level</li></ul>
+<div class="sf-nb"><strong>Note:</strong> Technology augments but never replaces your judgment.</div>
+</div>
+</div>
+<div class="sf-tc">
+<h2>9. Integrated Practice</h2>
+<div class="sf-ax"><div class="bt">Integration Exercise (15 minutes, table groups)</div></div>
+<h4>Reflection Questions</h4>
+<ol><li>Best method for a mature product in a stable market?</li>
+<li>New product launch with zero history &mdash; which methods?</li>
+<li>Top rep forecasts 20% growth, MA shows 5% &mdash; how to reconcile?</li>
+<li>VP wants one number, you believe 25M-32M &mdash; how to present?</li>
+<li>Rep consistently sandbagging by 15% &mdash; how to adjust?</li></ol>
+<div class="sf-nb"><strong>Note:</strong> You will receive a separate case study document (MediBridge Pharmaceuticals) as a post-session assignment integrating all methods.</div>
+</div>
+<div class="sf-tc">
+<h2>10-11. Key Takeaways &amp; Assignment</h2>
+<div class="sf-ax"><div class="bt">Seven Principles for Forecasting Excellence</div>
+<ol><li>Use available data effectively</li>
+<li>Apply appropriate methods per situation</li>
+<li>Combine methods (MA + MS + Sales Force Composite)</li>
+<li>Present scenarios (best/likely/worst)</li>
+<li>SMART framework + cascade with rationale</li>
+<li>Leverage team ground-level knowledge</li>
+<li>Refine quarterly: forecast vs. actual</li></ol></div>
+<h3>Post-Session Assignment</h3>
+<p>You will receive the <strong>MediBridge Pharmaceuticals</strong> case study document separately.</p>
+<div class="sf-ax"><div class="bt">Submission: 2 weeks | Max 5 pages | Individual</div></div>
+<h4>Part A: Forecast (50 pts)</h4><ul><li>Apply 2+ methods to case study data</li><li>Show calculations</li><li>Best/likely/worst scenarios</li></ul>
+<h4>Part B: Target Distribution (30 pts)</h4><ul><li>Hybrid method distribution</li><li>Rationale per territory</li><li>Top risk + mitigation per territory</li></ul>
+<h4>Part C: Action Plan (20 pts)</h4><ul><li>Root cause for weakest territory</li><li>3 measurable actions + timelines</li><li>Monthly tracking mechanism</li></ul>
+</div>
+<div class="sf-ft">
+<div class="bf">GENIO Talent Development&reg;</div>
+<div>Grow Your Talent &bull; Mohamed.issa@genio-me.com</div>
+</div>
+</div>
+<script>
+function sfTab(i){var t=document.querySelectorAll('.sf-tc'),b=document.querySelectorAll('.sf-tb');for(var j=0;j<t.length;j++){t[j].className=j===i?'sf-tc a':'sf-tc';b[j].className=j===i?'sf-tb a':'sf-tb'}}
+function sfAcc(b){var c=b.nextElementSibling,o=c.className.indexOf('o')>-1,p=b.parentElement;var ac=p.querySelectorAll('.sf-ac'),ab=p.querySelectorAll('.sf-ab');for(var i=0;i<ac.length;i++){ac[i].className='sf-ac';ab[i].className='sf-ab'}if(!o){c.className='sf-ac o';b.className='sf-ab o'}}
+</script>
