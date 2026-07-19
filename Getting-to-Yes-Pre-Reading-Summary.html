@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting to YES - Pre-Reading Summary | Genio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #1B2A4A;
+    --blue: #2B5EA7;
+    --blue-light: #3A7BD5;
+    --orange: #F5A623;
+    --gold: #D4972E;
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-300: #DEE2E6;
+    --gray-500: #868E96;
+    --gray-700: #495057;
+    --gray-900: #212529;
+    --green: #2E7D32;
+    --red: #C62828;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-900);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(245, 166, 35, 0.08);
+    border-radius: 50%;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .header h1 span { color: var(--orange); }
+  .header p {
+    font-size: 15px;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  .header-meta {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+  .header-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* PROGRESS BAR */
+  .progress-bar-container {
+    background: var(--white);
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .progress-bar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .progress-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-700);
+    white-space: nowrap;
+  }
+  .progress-track {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+  .progress-pct {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    min-width: 36px;
+    text-align: right;
+  }
+
+  /* TABS */
+  .tabs-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 0;
+  }
+  .tabs-scroll {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .tabs-scroll::-webkit-scrollbar { height: 4px; }
+  .tabs-scroll::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 2px; }
+
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border: none;
+    background: var(--white);
+    color: var(--gray-500);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.2s;
+    border: 1px solid var(--gray-200);
+    border-bottom: none;
+    position: relative;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--blue); background: var(--gray-100); }
+  .tab-btn.active {
+    color: var(--navy);
+    background: var(--white);
+    font-weight: 600;
+    border-color: var(--gray-300);
+    box-shadow: 0 -2px 0 var(--orange) inset;
+  }
+  .tab-btn .tab-num {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--gray-200);
+    color: var(--gray-700);
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 6px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active .tab-num { background: var(--orange); color: white; }
+  .tab-btn.completed .tab-num { background: var(--green); color: white; }
+  .tab-btn.completed .tab-num::after { content: '\2713'; }
+  .tab-btn.completed .tab-num-text { display: none; }
+
+  /* CONTENT */
+  .content-area {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+  }
+  .lesson-panel {
+    display: none;
+    background: var(--white);
+    border-radius: 0 12px 12px 12px;
+    border: 1px solid var(--gray-200);
+    padding: 32px;
+    animation: fadeIn 0.3s ease;
+  }
+  .lesson-panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .lesson-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray-100);
+  }
+  .lesson-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .lesson-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .lesson-header .reading-time {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 4px;
+  }
+
+  .lesson-body h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 24px 0 12px;
+  }
+  .lesson-body p { margin-bottom: 14px; color: var(--gray-700); }
+
+  .key-point {
+    background: linear-gradient(135deg, #EBF3FE 0%, #F0F4FF 100%);
+    border-left: 4px solid var(--blue);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  .key-point strong { color: var(--navy); }
+
+  .warning-box {
+    background: #FFF8E1;
+    border-left: 4px solid var(--orange);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+
+  .example-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .example-box .example-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .comparison-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .comparison-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .comparison-table tr:nth-child(even) td { background: var(--gray-50); }
+
+  /* QUIZ */
+  .quiz-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid var(--gray-100);
+  }
+  .quiz-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .quiz-title::before {
+    content: '\2713';
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .question {
+    background: var(--gray-50);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid var(--gray-200);
+  }
+  .question p {
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--gray-700);
+  }
+  .option-btn:hover:not(.selected) { border-color: var(--blue-light); background: #F0F7FF; }
+  .option-btn.correct { border-color: var(--green); background: #E8F5E9; color: var(--green); font-weight: 500; }
+  .option-btn.incorrect { border-color: var(--red); background: #FFEBEE; color: var(--red); }
+  .option-btn.selected { pointer-events: none; }
+  .option-btn .option-letter {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--gray-200);
+    color: var(--gray-700);
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .option-btn.correct .option-letter { background: var(--green); color: white; }
+  .option-btn.incorrect .option-letter { background: var(--red); color: white; }
+
+  .feedback {
+    display: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .feedback.show { display: block; animation: fadeIn 0.3s; }
+  .feedback.correct-fb { background: #E8F5E9; color: var(--green); border: 1px solid #C8E6C9; }
+  .feedback.incorrect-fb { background: #FFEBEE; color: var(--red); border: 1px solid #FFCDD2; }
+
+  /* NAVIGATION */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .nav-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-btn.prev { background: var(--gray-200); color: var(--gray-700); }
+  .nav-btn.prev:hover { background: var(--gray-300); }
+  .nav-btn.next { background: var(--blue); color: white; margin-left: auto; }
+  .nav-btn.next:hover { background: var(--navy); }
+  .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* COMPLETION */
+  .completion-card {
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .completion-card .trophy { font-size: 64px; margin-bottom: 16px; }
+  .completion-card h2 { font-size: 28px; color: var(--navy); margin-bottom: 8px; }
+  .completion-card p { color: var(--gray-500); font-size: 16px; margin-bottom: 24px; }
+  .score-display {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .score-label { font-size: 13px; opacity: 0.8; font-weight: 400; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--gray-500);
+    border-top: 1px solid var(--gray-200);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .footer strong { color: var(--navy); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .lesson-panel { padding: 20px 16px; }
+    .lesson-header { flex-direction: column; gap: 8px; }
+    .header-meta { flex-direction: column; gap: 8px; }
+    .tab-btn { padding: 8px 12px; font-size: 12px; }
+    .comparison-table { font-size: 12px; }
+    .comparison-table th, .comparison-table td { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">Pre-Reading Summary</div>
+  <h1>Getting to <span>YES</span></h1>
+  <p>Negotiating Agreement Without Giving In<br>by Roger Fisher, William Ury & Bruce Patton</p>
+  <div class="header-meta">
+    <span>&#128214; 7 Lessons</span>
+    <span>&#9202; ~30 min read</span>
+    <span>&#9989; Knowledge checks included</span>
+  </div>
+</div>
+
+<div class="progress-bar-container">
+  <div class="progress-bar-inner">
+    <span class="progress-label">Progress</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-pct" id="progressPct">0%</span>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <div class="tabs-scroll" id="tabsScroll"></div>
+</div>
+
+<div class="content-area" id="contentArea"></div>
+
+<div class="footer">
+  <strong>GENIO</strong> &mdash; Grow Your Talent &nbsp;|&nbsp; Trust and Value-based Negotiations Program<br>
+  Based on <em>Getting to YES</em> by Fisher, Ury & Patton (Harvard Negotiation Project)
+</div>
+
+<script>
+const lessons = [
+  {
+    title: "The Problem with Positional Bargaining",
+    icon: "&#9888;",
+    iconBg: "#FFF3E0",
+    time: "4 min",
+    content: `
+      <h3>Everyone Is a Negotiator</h3>
+      <p>Whether you're discussing a raise, settling a contract, or deciding where to eat dinner, you negotiate every day. Negotiation is back-and-forth communication designed to reach agreement when parties have both shared and opposing interests.</p>
+
+      <h3>What Is Positional Bargaining?</h3>
+      <p>The most common approach: each side takes a position, argues for it, and makes concessions to reach a compromise. Think of haggling over a price in a shop &mdash; "I'll pay $25" / "The price is $75" &mdash; and slowly meeting somewhere in the middle.</p>
+
+      <div class="warning-box">
+        <strong>The core problem:</strong> Positional bargaining locks your ego into your stated position. The more you defend it, the harder it becomes to change &mdash; and the less likely the outcome will meet anyone's real interests.
+      </div>
+
+      <h3>Why Positional Bargaining Fails</h3>
+      <p><strong>It produces unwise agreements.</strong> When negotiators focus on positions instead of underlying interests, the final deal often splits the difference mechanically rather than addressing what each party actually needs. The U.S.-Soviet nuclear test ban talks collapsed because both sides argued about the <em>number</em> of inspections (positions) instead of designing an inspection procedure that met both sides' real interests (verification vs. minimal intrusion).</p>
+      <p><strong>It is inefficient.</strong> Starting with extreme positions and making small concessions wastes time and creates incentives to stall.</p>
+      <p><strong>It endangers relationships.</strong> Positional bargaining becomes a contest of wills. Anger, resentment, and broken relationships often follow.</p>
+
+      <h3>Soft vs. Hard: Both Lose</h3>
+      <table class="comparison-table">
+        <tr><th>Soft Negotiator</th><th>Hard Negotiator</th></tr>
+        <tr><td>Sees the other side as friends</td><td>Sees them as adversaries</td></tr>
+        <tr><td>Makes concessions to cultivate the relationship</td><td>Demands concessions as a condition of the relationship</td></tr>
+        <tr><td>Trusts others</td><td>Distrusts others</td></tr>
+        <tr><td>Changes position easily</td><td>Digs into position</td></tr>
+        <tr><td>Yields to pressure</td><td>Applies pressure</td></tr>
+      </table>
+      <p>A hard negotiator will always dominate a soft one. Playing soft means you'll likely lose your shirt. But playing hard damages relationships and produces stubborn deadlocks.</p>
+
+      <div class="key-point">
+        <strong>The Alternative &mdash; Principled Negotiation:</strong> Instead of choosing between soft and hard, change the game entirely. Principled negotiation (also called "negotiation on the merits") has four pillars: (1) Separate the people from the problem, (2) Focus on interests, not positions, (3) Invent options for mutual gain, (4) Insist on using objective criteria.
+      </div>
+    `,
+    quiz: [
+      {
+        q: "What is the main danger of positional bargaining?",
+        opts: [
+          "It takes too long to reach agreement",
+          "Your ego becomes tied to your position, making wise agreements unlikely",
+          "It always results in no agreement",
+          "It only works with two parties"
+        ],
+        correct: 1,
+        fb_correct: "Correct. When your ego is identified with a position, you focus on 'saving face' rather than meeting underlying interests.",
+        fb_incorrect: "Not quite. The key danger is that your ego becomes tied to your position, making it harder to reach agreements that serve actual interests."
+      },
+      {
+        q: "Why does a 'soft' negotiation approach often fail?",
+        opts: [
+          "It is too slow",
+          "It makes you vulnerable to a hard bargainer who will exploit your concessions",
+          "It requires too much trust",
+          "It doesn't work in business settings"
+        ],
+        correct: 1,
+        fb_correct: "Correct. A hard game always dominates a soft one &mdash; the soft negotiator yields to avoid confrontation, producing lopsided results.",
+        fb_incorrect: "The core issue is that soft negotiating makes you vulnerable to a hard player who will exploit your willingness to concede."
+      },
+      {
+        q: "Principled negotiation proposes that you should:",
+        opts: [
+          "Always take a firm opening position",
+          "Be soft on people and soft on the problem",
+          "Be soft on the people, hard on the problem",
+          "Be hard on the people and hard on the problem"
+        ],
+        correct: 2,
+        fb_correct: "Correct. Principled negotiation means treating people with respect while being rigorous about solving the substantive problem.",
+        fb_incorrect: "Principled negotiation calls for being soft on the people (maintaining relationships) while being hard on the problem (insisting on wise outcomes)."
+      }
+    ]
+  },
+  {
+    title: "Separate the People from the Problem",
+    icon: "&#128101;",
+    iconBg: "#E3F2FD",
+    time: "5 min",
+    content: `
+      <h3>Negotiators Are People First</h3>
+      <p>Every negotiator has emotions, perceptions, deeply held values, and a unique background. They can get angry, frustrated, or fearful. They confuse perception with reality. They misinterpret what you say. These human dynamics can derail any negotiation if you don't handle them separately from the substantive issues.</p>
+
+      <div class="key-point">
+        <strong>Core principle:</strong> Disentangle the <em>relationship</em> from the <em>substance</em>. Attack the problem, never the person. Think of yourself as working side by side with the other party, tackling a shared problem together.
+      </div>
+
+      <h3>Three Categories of People Problems</h3>
+
+      <h3>1. Perception</h3>
+      <p>Conflict lives in people's heads, not in objective reality. Two people can agree on all the facts and still disagree fiercely about the outcome.</p>
+      <p><strong>Key techniques:</strong></p>
+      <p>&bull; <strong>Put yourself in their shoes.</strong> The ability to see the situation from the other side's perspective is one of the most important negotiation skills. It does not mean agreeing &mdash; it means understanding.</p>
+      <p>&bull; <strong>Don't deduce their intentions from your fears.</strong> We tend to assume the worst. A story: a man offers a woman a ride home, takes unfamiliar streets, says it's a shortcut &mdash; and gets her home so fast she catches the 10 o'clock news. Our fears created a false assumption.</p>
+      <p>&bull; <strong>Don't blame them for your problem.</strong> Even if justified, blame is counterproductive. It makes the other side defensive and shuts down listening.</p>
+      <p>&bull; <strong>Give them a stake in the outcome</strong> by involving them in the process. If they participate in crafting the solution, they're far more likely to accept it.</p>
+
+      <h3>2. Emotion</h3>
+      <p>In a difficult dispute, feelings may matter more than words. Fear breeds anger, anger breeds fear, and emotions can bring a negotiation to a dead stop.</p>
+      <p><strong>Key techniques:</strong></p>
+      <p>&bull; Recognize and name emotions &mdash; yours and theirs.</p>
+      <p>&bull; Make emotions explicit and acknowledge them as legitimate.</p>
+      <p>&bull; Allow the other side to let off steam &mdash; listen without reacting.</p>
+      <p>&bull; Don't react to emotional outbursts. One steel industry committee adopted a rule: only one person could get angry at a time.</p>
+
+      <h3>3. Communication</h3>
+      <p>Three common communication problems destroy negotiations:</p>
+      <p>&bull; <strong>Not talking to each other</strong> &mdash; performing for audiences instead of communicating.</p>
+      <p>&bull; <strong>Not listening</strong> &mdash; preparing your rebuttal while the other side speaks.</p>
+      <p>&bull; <strong>Misunderstanding</strong> &mdash; especially across languages and cultures. The word "compromise" in Persian has only a negative meaning ("our integrity was compromised"), and "mediator" suggests "meddler." When the U.N. Secretary General said he came to Iran as a "mediator to work out a compromise," his car was stoned within an hour.</p>
+
+      <div class="key-point">
+        <strong>The remedy:</strong> Listen actively and acknowledge what is being said. Speak about yourself ("I feel frustrated when..."), not about them ("You always..."). Speak for a purpose. Build a working relationship before the negotiation begins.
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">Real-World Example</div>
+        President Sadat's 1977 visit to Jerusalem dramatically changed Israeli perceptions of Egypt. Instead of acting as an enemy, he flew to the capital of his adversaries &mdash; an act so unexpected it opened the path to the Egyptian-Israeli peace treaty. A single move to address the <em>people problem</em> made the substantive breakthrough possible.
+      </div>
+    `,
+    quiz: [
+      {
+        q: "According to the book, where does conflict actually live?",
+        opts: [
+          "In the objective facts of the situation",
+          "In the contract terms",
+          "In people's heads &mdash; their perceptions, not objective reality",
+          "In the power imbalance between parties"
+        ],
+        correct: 2,
+        fb_correct: "Correct. Facts may be established, but the conflict exists in how each side perceives the situation. That's why managing perceptions is critical.",
+        fb_incorrect: "The book emphasizes that conflict exists in people's heads &mdash; in their perceptions &mdash; not in objective reality. That's why perception management is essential."
+      },
+      {
+        q: "What is the recommended response to an emotional outburst from the other side?",
+        opts: [
+          "Match their intensity to show strength",
+          "Walk out of the negotiation immediately",
+          "Listen quietly, allow them to vent, and don't react emotionally",
+          "Tell them they are being irrational"
+        ],
+        correct: 2,
+        fb_correct: "Correct. Let them release their emotions without feeding the fire. Quiet listening leaves little residue to fester.",
+        fb_incorrect: "The recommended approach is to listen quietly without reacting, letting the other side vent completely. This defuses the emotion without escalating."
+      },
+      {
+        q: "Why should you 'speak about yourself, not about them'?",
+        opts: [
+          "It makes you look more confident",
+          "It avoids provoking defensiveness &mdash; describing your feelings is hard to challenge",
+          "It shows that you don't care about their concerns",
+          "It saves time in the negotiation"
+        ],
+        correct: 1,
+        fb_correct: "Correct. Saying 'I feel disappointed' delivers the same message as 'You broke your word' without provoking a defensive reaction.",
+        fb_incorrect: "Describing your own feelings ('I feel disappointed') communicates the same message as an accusation ('You broke your word') but without triggering defensiveness."
+      }
+    ]
+  },
+  {
+    title: "Focus on Interests, Not Positions",
+    icon: "&#127919;",
+    iconBg: "#E8F5E9",
+    time: "5 min",
+    content: `
+      <h3>Interests Define the Problem</h3>
+      <p>A <strong>position</strong> is what you say you want. An <strong>interest</strong> is <em>why</em> you want it &mdash; the needs, desires, concerns, and fears driving your position. The real problem in negotiation is not the clash of positions, but the conflict between underlying interests.</p>
+
+      <div class="example-box">
+        <div class="example-label">The Camp David Example</div>
+        Egypt and Israel negotiated over the Sinai Peninsula. Their <em>positions</em> were incompatible: Israel wanted to keep the Sinai, Egypt demanded every inch back. No map could satisfy both positions. But their <em>interests</em> were different: Israel needed <strong>security</strong> (no Egyptian tanks on its border), and Egypt needed <strong>sovereignty</strong> (the Sinai had been part of Egypt since the Pharaohs). The solution: return the Sinai to Egypt but make it a demilitarized zone. Both interests met. Positions reconciled.
+      </div>
+
+      <h3>How to Uncover Interests</h3>
+      <p><strong>Ask "Why?"</strong> &mdash; Put yourself in their shoes and ask why they hold that position. What human needs or concerns drive it?</p>
+      <p><strong>Ask "Why not?"</strong> &mdash; Think about why they have <em>not</em> already made the decision you want. What barriers, costs, or fears stand in the way?</p>
+
+      <div class="key-point">
+        <strong>Critical insight:</strong> Each side has <em>multiple</em> interests, not just one. And the most powerful interests are basic human needs: security, economic well-being, a sense of belonging, recognition, and control over one's life. Negotiations stall when one side believes the other is threatening their basic human needs.
+      </div>
+
+      <h3>Shared, Different, and Opposing Interests</h3>
+      <p>Behind opposed positions, you'll often find a mix of shared interests, different-but-compatible interests, and genuinely opposing interests. Most negotiations are not purely zero-sum.</p>
+      <p>Consider a landlord and tenant: they disagree on rent (opposed interest), but both want a long lease and a well-maintained apartment (shared interests). The tenant prefers to avoid fresh paint (allergy), while the landlord wants to avoid repainting costs (different interests that complement each other).</p>
+      <p><strong>Agreement is often made possible precisely because interests differ,</strong> not despite it. You like shoes more than $30; the seller likes $30 more than the shoes. That difference enables the deal.</p>
+
+      <h3>Communicating Your Interests</h3>
+      <p>&bull; <strong>Be specific and concrete</strong> &mdash; vivid details are credible; "40-mph trucks past our children's school" is more persuasive than "it's dangerous."</p>
+      <p>&bull; <strong>Acknowledge their interests as part of the problem.</strong> People listen better if they feel understood first.</p>
+      <p>&bull; <strong>Look forward, not back.</strong> Talk about what you want to happen, not about what went wrong.</p>
+      <p>&bull; <strong>Be hard on the problem, soft on the people.</strong> Attack the problem vigorously while supporting the human beings on the other side.</p>
+    `,
+    quiz: [
+      {
+        q: "What is the key difference between a position and an interest?",
+        opts: [
+          "A position is private; an interest is public",
+          "A position is what you decide upon; an interest is what caused you to decide",
+          "They mean the same thing",
+          "A position is flexible; an interest is fixed"
+        ],
+        correct: 1,
+        fb_correct: "Correct. Your position is your stated demand. Your interest is the underlying need that drove you to that demand.",
+        fb_incorrect: "A position is what you've decided to demand. An interest is the underlying need, concern, or desire that caused you to take that position."
+      },
+      {
+        q: "In the Camp David example, what made the Egypt-Israel agreement possible?",
+        opts: [
+          "Splitting the Sinai territory in half",
+          "Israel making all the concessions",
+          "Looking behind positions to discover that Israel needed security and Egypt needed sovereignty",
+          "Bringing in a more powerful mediator"
+        ],
+        correct: 2,
+        fb_correct: "Correct. The breakthrough came from discovering the different underlying interests &mdash; security vs. sovereignty &mdash; which could both be satisfied through a demilitarized zone.",
+        fb_incorrect: "The solution came from discovering that Israel's interest was security and Egypt's was sovereignty. A demilitarized zone met both interests without splitting territory."
+      },
+      {
+        q: "Why does the book say agreement is 'often made possible precisely because interests differ'?",
+        opts: [
+          "Because different interests always lead to compromise",
+          "Because differences create opportunities to trade things of unequal value to each side",
+          "Because having different interests means there is no real conflict",
+          "Because it is easier to argue with someone who disagrees"
+        ],
+        correct: 1,
+        fb_correct: "Correct. When parties value things differently, they can trade what costs one side little but benefits the other greatly &mdash; creating value for both.",
+        fb_incorrect: "The key insight: differences in how parties value things create opportunities to trade items of low cost to one side and high benefit to the other."
+      }
+    ]
+  },
+  {
+    title: "Invent Options for Mutual Gain",
+    icon: "&#128161;",
+    iconBg: "#FFF3E0",
+    time: "5 min",
+    content: `
+      <h3>The Problem: A Fixed Pie</h3>
+      <p>Most negotiators assume the pie is fixed &mdash; more for you means less for me. This is rarely true. The failure to invent creative options is one of the biggest obstacles to wise agreements.</p>
+
+      <h3>Four Obstacles to Creative Options</h3>
+      <p><strong>1. Premature judgment.</strong> Nothing kills creativity like a critical voice waiting to attack every new idea. Under pressure, your critical sense becomes even sharper.</p>
+      <p><strong>2. Searching for THE single answer.</strong> Narrowing down too early prevents you from discovering creative alternatives.</p>
+      <p><strong>3. The fixed-pie assumption.</strong> Believing that the other side's gain is necessarily your loss shuts down creative thinking.</p>
+      <p><strong>4. Thinking that "solving their problem is their problem."</strong> Short-sighted self-interest blocks the discovery of solutions that benefit both sides.</p>
+
+      <h3>Prescription: Separate Inventing from Deciding</h3>
+      <p>Since judgment hinders imagination, separate the creative act from the critical one. <strong>Invent first, decide later.</strong></p>
+
+      <div class="key-point">
+        <strong>Brainstorming rules:</strong> (1) Define the purpose clearly, (2) Choose a few participants, (3) Change the environment, (4) Use a facilitator, (5) Sit side by side facing the problem, (6) Postpone all criticism and evaluation, (7) Record all ideas visibly. Then afterward: star the most promising, improve them, and set a time to evaluate.
+      </div>
+
+      <h3>The Circle Chart: Four Steps of Invention</h3>
+      <p>Move between four types of thinking:</p>
+      <table class="comparison-table">
+        <tr><th>Step</th><th>What You Do</th></tr>
+        <tr><td><strong>1. Problem</strong></td><td>What's wrong? What are the symptoms?</td></tr>
+        <tr><td><strong>2. Analysis</strong></td><td>Diagnose causes. Why does this problem exist?</td></tr>
+        <tr><td><strong>3. Approaches</strong></td><td>What broad strategies might address the causes?</td></tr>
+        <tr><td><strong>4. Action Ideas</strong></td><td>What specific, feasible steps could be taken?</td></tr>
+      </table>
+
+      <h3>Look for Mutual Gain</h3>
+      <p><strong>Identify shared interests</strong> &mdash; they are latent in every negotiation but not always obvious. Making them explicit and framing them as shared goals makes the negotiation smoother.</p>
+      <p><strong>Dovetail differing interests.</strong> Differences in interests, beliefs, time preferences, forecasts, and risk tolerance create opportunities for trades that benefit both sides.</p>
+
+      <div class="key-point">
+        <strong>The dovetailing principle:</strong> Look for items that are of <em>low cost to you and high benefit to them</em>, and vice versa. A negotiator's motto: "Vive la diff&eacute;rence!"
+      </div>
+
+      <h3>Make Their Decision Easy</h3>
+      <p>Success depends on the other side making a decision you want. So make that decision as painless as possible. Draft multiple versions of a possible agreement. Shape solutions so they appear <strong>legitimate</strong> &mdash; fair, legal, honorable. A precedent is the negotiator's best friend: find a comparable case where a similar decision was made.</p>
+    `,
+    quiz: [
+      {
+        q: "What is the biggest mental block to inventing creative options?",
+        opts: [
+          "Lack of subject-matter expertise",
+          "The assumption that the pie is fixed &mdash; more for you means less for me",
+          "Having too many people in the room",
+          "Cultural differences between negotiators"
+        ],
+        correct: 1,
+        fb_correct: "Correct. The fixed-pie assumption is rarely true but shuts down the creative thinking needed to find mutual gains.",
+        fb_incorrect: "The biggest block is the fixed-pie assumption &mdash; believing the other side's gain must be your loss. This is rarely accurate and prevents creative solutions."
+      },
+      {
+        q: "What does 'separate inventing from deciding' mean?",
+        opts: [
+          "Let one team invent and another team decide",
+          "Generate ideas without criticism first, then evaluate them separately",
+          "Invent solutions only after the negotiation ends",
+          "Avoid deciding anything during the negotiation"
+        ],
+        correct: 1,
+        fb_correct: "Correct. Brainstorm freely without judgment first, then switch to critical evaluation. Mixing the two kills creativity.",
+        fb_incorrect: "It means brainstorming freely without judging any idea, and only afterward switching to evaluation mode. Judgment during creation kills imagination."
+      },
+      {
+        q: "What does 'dovetailing' mean in negotiation?",
+        opts: [
+          "Splitting every issue exactly 50/50",
+          "Trading items of low cost to you for items of high benefit to them, and vice versa",
+          "Avoiding all differences between parties",
+          "Making the first concession to build trust"
+        ],
+        correct: 1,
+        fb_correct: "Correct. Differences in interests, time horizons, risk tolerance and forecasts create opportunities for trades that benefit both sides.",
+        fb_incorrect: "Dovetailing means finding things that cost one side little but are very valuable to the other &mdash; then trading them to create mutual gain."
+      }
+    ]
+  },
+  {
+    title: "Insist on Using Objective Criteria",
+    icon: "&#9878;",
+    iconBg: "#F3E5F5",
+    time: "4 min",
+    content: `
+      <h3>The Problem with Willpower Contests</h3>
+      <p>When interests directly conflict and no creative option resolves them, negotiators often fall back to a contest of wills: "I won't budge." This is costly, damages relationships, and produces arbitrary outcomes.</p>
+
+      <div class="key-point">
+        <strong>The solution:</strong> Insist that the outcome be based on some objective standard independent of either side's will &mdash; fair criteria or fair procedures.
+      </div>
+
+      <h3>Fair Standards</h3>
+      <p>Objective criteria you might use include: market value, precedent, scientific judgment, professional standards, efficiency, costs, what a court would decide, moral standards, equal treatment, tradition, or reciprocity.</p>
+      <p>At minimum, objective criteria must be <strong>independent of either side's will</strong>. Ideally they should also be legitimate and practical. Use the <strong>test of reciprocal application</strong>: would the other side apply this same standard to themselves?</p>
+
+      <div class="example-box">
+        <div class="example-label">Real-World Example: The Insurance Claim</div>
+        After a car was totaled, the insurance company offered $6,600. Instead of haggling, the claimant asked: "How did you arrive at that figure?" He then researched comparable car prices in newspaper ads, checked mileage differences, and accounted for extras like air conditioning and radio. Using the company's own reference book plus objective market data, he walked out with a significantly better settlement &mdash; all by insisting on criteria, not positions.
+      </div>
+
+      <h3>Fair Procedures</h3>
+      <p>When you can't agree on a standard, agree on a <strong>fair procedure</strong>. Classic examples:</p>
+      <p>&bull; <strong>"I cut, you choose"</strong> &mdash; one divides, the other picks first.</p>
+      <p>&bull; <strong>Taking turns</strong> &mdash; like a coin toss to decide who gets first pick.</p>
+      <p>&bull; <strong>Last-best-offer arbitration</strong> &mdash; each side submits a final offer, and the arbitrator chooses one. This pressures both sides to be reasonable.</p>
+      <p>&bull; <strong>Bringing in an expert</strong> or mediator for advice or a binding decision.</p>
+
+      <h3>Three Rules for Negotiating with Objective Criteria</h3>
+      <p><strong>1. Frame each issue as a joint search for objective criteria.</strong> "You want a high price and I want a low price. Let's figure out what the fair price is. What standards are most relevant?"</p>
+      <p><strong>2. Reason and be open to reason.</strong> Be willing to consider the other side's proposed standards. Like a judge &mdash; predisposed to your side but willing to hear arguments for another standard.</p>
+      <p><strong>3. Never yield to pressure, only to principle.</strong> When they say "Take it or leave it," respond with: "Unless you can state objectively why that's what I'm entitled to, I think we should keep looking."</p>
+
+      <div class="warning-box">
+        <strong>Remember:</strong> Principled negotiation does not mean insisting on <em>your</em> criterion alone. One standard of legitimacy does not preclude others. When different standards conflict, look for an objective basis for choosing between them.
+      </div>
+    `,
+    quiz: [
+      {
+        q: "What is the 'test of reciprocal application'?",
+        opts: [
+          "Both sides must make equal concessions",
+          "Check whether the proposed standard would be applied equally if roles were reversed",
+          "Each side takes turns proposing solutions",
+          "Both parties must use the same lawyer"
+        ],
+        correct: 1,
+        fb_correct: "Correct. If a real estate agent offers you a 'standard' contract, ask if that's the same form they use when <em>they</em> buy a house.",
+        fb_incorrect: "The test is: would the other side apply this same standard to themselves? It checks whether a criterion is truly fair and independent of either party's will."
+      },
+      {
+        q: "When the other side says 'Take it or leave it,' a principled negotiator should:",
+        opts: [
+          "Leave immediately",
+          "Accept the offer to preserve the relationship",
+          "Ask them to explain objectively why that amount is fair, and suggest meeting again",
+          "Make a counter-threat"
+        ],
+        correct: 2,
+        fb_correct: "Correct. Refuse to yield to pressure, but stay engaged. Ask for the principle behind their number and keep the door open.",
+        fb_incorrect: "The principled response: 'Unless you can state objectively why that's fair, I'd rather keep looking. Let's meet again.' Yield to principle, never to pressure."
+      }
+    ]
+  },
+  {
+    title: "BATNA: Your Best Alternative",
+    icon: "&#128170;",
+    iconBg: "#E0F7FA",
+    time: "4 min",
+    content: `
+      <h3>What If They're More Powerful?</h3>
+      <p>No method can guarantee success if all the leverage is on the other side. But principled negotiation can achieve two critical objectives: <strong>protect you from accepting a bad agreement</strong> and <strong>help you make the most of whatever assets you have</strong>.</p>
+
+      <h3>The Danger of a Bottom Line</h3>
+      <p>Many negotiators set a "bottom line" &mdash; the worst acceptable outcome &mdash; to protect themselves. The problem: a bottom line is rigid by nature, kills creativity, and is often set at the wrong level (too high from group pressure, or too low from timidity). It prevents you from discovering imaginative solutions.</p>
+
+      <div class="key-point">
+        <strong>BATNA = Best Alternative To a Negotiated Agreement.</strong> This is your true source of negotiating power. It's not your bottom line &mdash; it's what you'll actually <em>do</em> if this negotiation fails. The better your BATNA, the stronger your position.
+      </div>
+
+      <h3>Why BATNA Matters</h3>
+      <p>Whether you should accept any proposed agreement depends entirely on one question: <strong>Is this deal better than my best alternative?</strong> If yes, take it. If no, walk away and pursue your BATNA.</p>
+      <p>Your BATNA is the standard against which any proposed agreement should be measured. It protects you from both accepting deals that are too unfavorable and from rejecting deals you should accept.</p>
+
+      <h3>How to Develop Your BATNA</h3>
+      <p>Attractive alternatives don't just appear &mdash; you develop them through three steps:</p>
+      <p><strong>1. Invent</strong> a list of actions you might take if no agreement is reached.</p>
+      <p><strong>2. Improve</strong> the most promising ideas and convert them into practical alternatives.</p>
+      <p><strong>3. Select</strong> the one alternative that seems best.</p>
+
+      <div class="example-box">
+        <div class="example-label">Real-World Example</div>
+        A small town negotiated a tax deal with a massive corporation. Despite the corporation's overwhelming resources, the town had a strong BATNA: other companies were eager to move in. The small town's attractive alternative gave it more negotiating power than one of the world's largest corporations. <strong>Power comes from having a good alternative, not from being bigger.</strong>
+      </div>
+
+      <h3>Using BATNA Strategically</h3>
+      <p>&bull; If your BATNA is strong, let the other side know &mdash; it gives them a realistic picture.</p>
+      <p>&bull; If their BATNA is strong and they see no reason to negotiate, consider what you can do to <strong>change their BATNA</strong> (e.g., filing a lawsuit to revoke a permit).</p>
+      <p>&bull; If both sides have strong BATNAs, the best outcome may be to <strong>not reach agreement</strong> and for each to pursue their alternatives.</p>
+      <p>&bull; Also consider a <strong>"trip wire"</strong> &mdash; a threshold below your BATNA that triggers a pause and careful reassessment before you agree to anything.</p>
+    `,
+    quiz: [
+      {
+        q: "What is a BATNA?",
+        opts: [
+          "Your bottom line &mdash; the minimum you'll accept",
+          "Your best alternative to a negotiated agreement &mdash; what you'll do if this deal fails",
+          "Your opening offer in the negotiation",
+          "A tactic for pressuring the other side"
+        ],
+        correct: 1,
+        fb_correct: "Correct. BATNA is your best walk-away option &mdash; the course of action you'll pursue if no agreement is reached.",
+        fb_incorrect: "BATNA stands for Best Alternative To a Negotiated Agreement. It's what you'll actually do if this negotiation fails &mdash; not just a number on paper."
+      },
+      {
+        q: "Why is a 'bottom line' potentially dangerous?",
+        opts: [
+          "It reveals your strategy to the other side",
+          "It is rigid, often set at the wrong level, and prevents creative solutions",
+          "It takes too long to calculate",
+          "It only works in financial negotiations"
+        ],
+        correct: 1,
+        fb_correct: "Correct. A bottom line locks you in, is often too high or too low, and blocks the discovery of imaginative agreements.",
+        fb_incorrect: "The danger is that a bottom line is inherently rigid, often set at the wrong level due to group pressure, and prevents you from exploring creative options."
+      },
+      {
+        q: "What determines whether you should accept a negotiated agreement?",
+        opts: [
+          "Whether the other side seems happy with it",
+          "Whether it exceeds your opening position",
+          "Whether it is better than your BATNA",
+          "Whether it took a long time to negotiate"
+        ],
+        correct: 2,
+        fb_correct: "Correct. The only relevant test: is this agreement better than your best alternative? If yes, take it. If no, walk away.",
+        fb_incorrect: "The test is simple: is this agreement better than your BATNA? If the deal is worse than what you'd get by walking away, don't take it."
+      }
+    ]
+  },
+  {
+    title: "Dealing with Difficult Negotiators",
+    icon: "&#9889;",
+    iconBg: "#FCE4EC",
+    time: "5 min",
+    content: `
+      <h3>What If They Won't Play?</h3>
+      <p>What do you do when the other side attacks your position, attacks you personally, or simply refuses to move? The natural response &mdash; pushing back &mdash; only locks you both into positional bargaining.</p>
+
+      <h3>Negotiation Jujitsu</h3>
+      <p>Like the martial art, don't push back &mdash; <strong>step aside and redirect their force</strong> toward the problem.</p>
+
+      <div class="key-point">
+        <strong>Three core moves:</strong><br>
+        (1) <strong>Don't attack their position &mdash; look behind it.</strong> When they state a position, ask "Why?" and "What interests does that serve?"<br>
+        (2) <strong>Don't defend your ideas &mdash; invite criticism.</strong> Ask "What concerns of yours would this proposal fail to address?" Turn their attacks into problem-solving.<br>
+        (3) <strong>Ask questions and pause.</strong> Questions generate answers. Statements generate resistance. Silence creates productive discomfort.
+      </div>
+
+      <h3>The One-Text Procedure</h3>
+      <p>When direct negotiation stalls, use a third party (or draft yourself) to create a single working document. Share it with both sides for criticism &mdash; not acceptance. Revise it based on the criticism. Repeat until the draft can't be improved further, then ask: "Is this better than your BATNA?"</p>
+      <p>This is exactly what the U.S. used at Camp David &mdash; going back and forth between Egypt and Israel with a single text, refining it 23 times until both sides said yes.</p>
+
+      <h3>Recognizing Dirty Tricks</h3>
+      <p>The principled response to dirty tactics: <strong>recognize them, raise them explicitly, and negotiate about the process itself.</strong></p>
+
+      <table class="comparison-table">
+        <tr><th>Dirty Tactic</th><th>Principled Response</th></tr>
+        <tr><td><strong>Phony facts</strong> &mdash; deliberate lies about data</td><td>Verify independently. Proceed independent of trust. "Trust, but verify."</td></tr>
+        <tr><td><strong>Ambiguous authority</strong> &mdash; "I need to check with my boss"</td><td>Ask about authority levels <em>before</em> negotiating. Get commitments in writing.</td></tr>
+        <tr><td><strong>Good cop / bad cop</strong> &mdash; one tough, one friendly</td><td>Recognize the tactic and ask the "good cop" the same principled questions.</td></tr>
+        <tr><td><strong>Threats</strong></td><td>Warn about consequences, don't threaten. "If we can't resolve this, both sides will be hurt."</td></tr>
+        <tr><td><strong>Extreme demands</strong></td><td>Ask for the principled justification. "Help me understand how you arrived at that figure."</td></tr>
+        <tr><td><strong>Lock-in tactics</strong> &mdash; public commitments</td><td>Downplay the lock-in. "We all have aspirations. Let's talk about the merits."</td></tr>
+        <tr><td><strong>"Take it or leave it"</strong></td><td>Treat it as one option. "I'd be happy to accept if you can show me it's fair."</td></tr>
+        <tr><td><strong>Deliberate discomfort</strong> &mdash; bad chairs, bright lights</td><td>Raise the issue openly. "I'm finding it hard to focus. Can we change rooms?"</td></tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>The meta-principle:</strong> When facing dirty tricks, negotiate about the <em>rules of the game</em>, not just the substance. "I want to know the rules we're playing by. Are we both trying to reach a wise agreement, or is this a contest of who's more stubborn?"
+      </div>
+
+      <h3>Using Power Wisely</h3>
+      <p>Power in negotiation comes from multiple sources: a good BATNA, the ability to listen and understand interests, creative options, legitimate standards, and a firm but respectful commitment to principle. The strongest negotiators use all these sources <em>in harmony</em> rather than relying on any one alone.</p>
+    `,
+    quiz: [
+      {
+        q: "What is 'negotiation jujitsu'?",
+        opts: [
+          "Overpowering the other side with superior arguments",
+          "Stepping aside and redirecting the other side's force toward the problem instead of pushing back",
+          "Refusing to engage until they make the first concession",
+          "Using emotional pressure to force agreement"
+        ],
+        correct: 1,
+        fb_correct: "Correct. Like the martial art, you avoid direct resistance and redirect their energy toward solving the actual problem.",
+        fb_incorrect: "Negotiation jujitsu means not pushing back directly. Instead, step aside and redirect their force toward the problem &mdash; ask questions, invite criticism, and use silence."
+      },
+      {
+        q: "When facing a 'good cop / bad cop' tactic, you should:",
+        opts: [
+          "Focus only on the 'good cop' and ignore the 'bad cop'",
+          "Walk away from the negotiation",
+          "Recognize the tactic and ask the 'good cop' the same principled questions you'd ask the 'bad cop'",
+          "Adopt the same tactic yourself"
+        ],
+        correct: 2,
+        fb_correct: "Correct. Once you recognize the tactic, it loses its power. Hold both to the same principled standard.",
+        fb_incorrect: "The right move is to recognize the tactic (which neutralizes it) and ask the 'good cop' the same fair-standard questions you'd ask anyone."
+      },
+      {
+        q: "What is the 'one-text procedure'?",
+        opts: [
+          "Each side writes their own agreement and then compares",
+          "A single working document is drafted, criticized by both sides, and refined repeatedly until it can't be improved",
+          "The mediator writes the final agreement without input from either side",
+          "One side writes the agreement and the other accepts or rejects it"
+        ],
+        correct: 1,
+        fb_correct: "Correct. This was used at Camp David &mdash; a single text refined 23 times through criticism from both sides until both agreed it was better than their alternatives.",
+        fb_incorrect: "The one-text procedure: a mediator (or one party) drafts a single document, invites criticism (not acceptance) from both sides, revises it, and repeats until the draft can't be improved."
+      }
+    ]
+  }
+];
+
+// ─── Render ───
+const tabsScroll = document.getElementById('tabsScroll');
+const contentArea = document.getElementById('contentArea');
+let currentLesson = 0;
+let completedLessons = new Set();
+let totalCorrect = 0;
+let totalQuestions = 0;
+
+function renderTabs() {
+  tabsScroll.innerHTML = '';
+  lessons.forEach((l, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (i === currentLesson ? ' active' : '') + (completedLessons.has(i) ? ' completed' : '');
+    btn.innerHTML = `<span class="tab-num"><span class="tab-num-text">${i + 1}</span></span>${l.title}`;
+    btn.onclick = () => goTo(i);
+    tabsScroll.appendChild(btn);
+  });
+  // scroll active tab into view
+  const active = tabsScroll.querySelector('.active');
+  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function renderContent() {
+  const l = lessons[currentLesson];
+  const quizHTML = l.quiz.map((q, qi) => {
+    const optsHTML = q.opts.map((o, oi) => {
+      const letter = String.fromCharCode(65 + oi);
+      return `<button class="option-btn" onclick="checkAnswer(${currentLesson}, ${qi}, ${oi}, this)">
+        <span class="option-letter">${letter}</span>${o}
+      </button>`;
+    }).join('');
+    return `
+      <div class="question" id="q-${currentLesson}-${qi}">
+        <p>Q${qi + 1}. ${q.q}</p>
+        <div class="options">${optsHTML}</div>
+        <div class="feedback correct-fb" id="fb-correct-${currentLesson}-${qi}">${q.fb_correct}</div>
+        <div class="feedback incorrect-fb" id="fb-incorrect-${currentLesson}-${qi}">${q.fb_incorrect}</div>
+      </div>
+    `;
+  }).join('');
+
+  contentArea.innerHTML = `
+    <div class="lesson-panel active">
+      <div class="lesson-header">
+        <div class="lesson-icon" style="background: ${l.iconBg}">${l.icon}</div>
+        <div>
+          <h2>Lesson ${currentLesson + 1}: ${l.title}</h2>
+          <div class="reading-time">${l.time} read</div>
+        </div>
+      </div>
+      <div class="lesson-body">${l.content}</div>
+      <div class="quiz-section">
+        <div class="quiz-title">Knowledge Check</div>
+        ${quizHTML}
+      </div>
+      <div class="nav-buttons">
+        <button class="nav-btn prev" onclick="goTo(${currentLesson - 1})" ${currentLesson === 0 ? 'disabled' : ''}>&larr; Previous</button>
+        ${currentLesson < lessons.length - 1
+          ? `<button class="nav-btn next" onclick="goTo(${currentLesson + 1})">Next Lesson &rarr;</button>`
+          : `<button class="nav-btn next" onclick="showCompletion()">Finish &rarr;</button>`
+        }
+      </div>
+    </div>
+  `;
+}
+
+function goTo(i) {
+  if (i < 0 || i >= lessons.length) return;
+  completedLessons.add(currentLesson);
+  currentLesson = i;
+  renderTabs();
+  renderContent();
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress() {
+  const visited = new Set([...completedLessons, currentLesson]).size;
+  const pct = Math.round((visited / lessons.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+
+function checkAnswer(lesson, qi, selected, btn) {
+  const q = lessons[lesson].quiz[qi];
+  const questionEl = document.getElementById(`q-${lesson}-${qi}`);
+  const allBtns = questionEl.querySelectorAll('.option-btn');
+
+  allBtns.forEach((b, i) => {
+    b.classList.add('selected');
+    if (i === q.correct) b.classList.add('correct');
+    else if (i === selected && selected !== q.correct) b.classList.add('incorrect');
+  });
+
+  totalQuestions++;
+  if (selected === q.correct) {
+    totalCorrect++;
+    document.getElementById(`fb-correct-${lesson}-${qi}`).classList.add('show');
+  } else {
+    document.getElementById(`fb-incorrect-${lesson}-${qi}`).classList.add('show');
+  }
+}
+
+function showCompletion() {
+  completedLessons.add(currentLesson);
+  const pct = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+  contentArea.innerHTML = `
+    <div class="lesson-panel active">
+      <div class="completion-card">
+        <div class="trophy">&#127942;</div>
+        <h2>Pre-Reading Complete!</h2>
+        <p>You've completed the Getting to YES summary.<br>You're ready for the Trust and Value-based Negotiations training.</p>
+        <div class="score-display">
+          ${totalCorrect} / ${totalQuestions}
+          <br><span class="score-label">Questions Answered Correctly</span>
+        </div>
+        <p style="margin-top:24px; font-size:14px; color: var(--gray-500);">
+          <strong>Key takeaways for the training:</strong><br>
+          The four pillars of principled negotiation &bull; BATNA as your power source &bull;
+          Interests over positions &bull; Creative options &bull; Objective criteria &bull; Handling difficult tactics
+        </p>
+        <div style="margin-top: 24px;">
+          <button class="nav-btn prev" onclick="currentLesson=0; completedLessons.clear(); totalCorrect=0; totalQuestions=0; renderTabs(); renderContent(); updateProgress(); window.scrollTo({top:0});">
+            &#8634; Start Over
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressPct').textContent = '100%';
+  renderTabs();
+}
+
+// Init
+renderTabs();
+renderContent();
+updateProgress();
+</script>
+</body>
+</html>
