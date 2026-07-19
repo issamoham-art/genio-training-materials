@@ -463,6 +463,67 @@
     .comparison-table { font-size: 12px; }
     .comparison-table th, .comparison-table td { padding: 8px; }
   }
+
+  /* DOWNLOAD BUTTON */
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 10px 22px;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .download-btn:hover { background: var(--gold); }
+
+  /* PRINT STYLES */
+  @media print {
+    @page { size: A4; margin: 18mm 15mm; }
+    body { background: #fff !important; font-size: 11pt; }
+    .header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px; }
+    .header h1 { font-size: 22pt; }
+    .progress-bar-container,
+    .tabs-container,
+    .nav-buttons,
+    .download-btn,
+    .option-btn,
+    .quiz-section,
+    .footer { display: none !important; }
+    .content-area .lesson-panel {
+      display: block !important;
+      break-inside: avoid-page;
+      border: none;
+      box-shadow: none;
+      margin: 0 0 12px 0;
+      padding: 16px 0;
+    }
+    .lesson-panel + .lesson-panel { border-top: 1px solid #ccc; page-break-before: always; }
+    .lesson-header { margin-bottom: 8px; }
+    .lesson-icon { display: none; }
+    .key-point, .example-box, .warning-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      break-inside: avoid;
+    }
+    .comparison-table { break-inside: avoid; }
+    h3 { break-after: avoid; }
+    .print-footer {
+      display: block !important;
+      text-align: center;
+      font-size: 9pt;
+      color: #666;
+      margin-top: 24px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+  }
+  .print-footer { display: none; }
 </style>
 </head>
 <body>
@@ -476,6 +537,7 @@
     <span>&#9202; ~30 min read</span>
     <span>&#9989; Knowledge checks included</span>
   </div>
+  <button class="download-btn" onclick="downloadPDF()">&#128196; Download as PDF</button>
 </div>
 
 <div class="progress-bar-container">
@@ -1172,6 +1234,32 @@ function showCompletion() {
   document.getElementById('progressFill').style.width = '100%';
   document.getElementById('progressPct').textContent = '100%';
   renderTabs();
+}
+
+function downloadPDF() {
+  // Render all lessons expanded for print
+  const savedLesson = currentLesson;
+  const savedHTML = contentArea.innerHTML;
+  let allLessons = '';
+  lessons.forEach((l, i) => {
+    allLessons += `
+      <div class="lesson-panel active">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background: ${l.iconBg}">${l.icon}</div>
+          <div>
+            <h2>Lesson ${i + 1}: ${l.title}</h2>
+            <div class="reading-time">${l.time} read</div>
+          </div>
+        </div>
+        <div class="lesson-body">${l.content}</div>
+      </div>
+    `;
+  });
+  allLessons += '<div class="print-footer"><strong>GENIO</strong> &mdash; Grow Your Talent | Trust and Value-based Negotiations Program<br>Based on <em>Getting to YES</em> by Fisher, Ury &amp; Patton</div>';
+  contentArea.innerHTML = allLessons;
+  window.print();
+  // Restore after print
+  contentArea.innerHTML = savedHTML;
 }
 
 // Init
