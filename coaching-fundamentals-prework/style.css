@@ -159,3 +159,12 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;padding:26px 16px}
  @page{size:A4 portrait;margin:9mm}}
 /* respect reduced-motion preference */
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.mod:hover{transform:none}}
+
+/* narration language toggle */
+.lang{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+#langHome{margin-top:14px;padding:10px 12px;border:1px solid #d9e2ec;border-radius:10px;background:#f6f9fc}
+.langlbl{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);margin-right:4px}
+.langbtn{border:1.5px solid var(--navy2);background:#fff;color:var(--navy2);border-radius:20px;padding:5px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.langbtn.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.langbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#trt[dir=rtl]{text-align:right;font-family:Tahoma,'Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.8}

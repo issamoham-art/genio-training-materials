@@ -7,7 +7,8 @@ const DATA = {
   "heroTitle": "Your pre-work for the Coaching Fundamentals workshop",
   "intro": [
    "This e-learning introduces the core ideas of field coaching for first line sales managers: the Plan, Implement, Evaluate process, readiness by task, and how to match your coaching style to each rep.",
-   "Work through the four modules in order. Keep your workbook beside you: seven activities ask you to stop and write. Bring the completed workbook to the workshop."
+   "Work through the four modules in order. Keep your workbook beside you: seven activities ask you to stop and write. Bring the completed workbook to the workshop.",
+   "Choose your narration language below: English or Arabic. The screens, quizzes and certificate stay in English, and you can switch language at any time."
   ],
   "minutes": 45,
   "cover": "cover.jpg",
@@ -18,6 +19,17 @@ const DATA = {
   "gate": true,
   "transcript": true
  },
+ "languages": [
+  {
+   "code": "en",
+   "label": "English"
+  },
+  {
+   "code": "ar",
+   "label": "عربي",
+   "dir": "rtl"
+  }
+ ],
  "workbook": {
   "file": "assets/Coaching_Fundamentals_Prework_Workbook.pdf",
   "pages": {
@@ -101,20 +113,26 @@ const DATA = {
      "img": "img/M1-01.jpg",
      "audio": "audio/M1-01.mp3",
      "transcript": "Welcome to Coaching Fundamentals: Essential Concepts. Whether you were promoted to first line manager a few months ago, or you have been leading a team for years, you already know that your team's results depend on how well you coach. This short e-learning prepares you for the classroom workshop. It gives you the core ideas, so that our time together can be spent practising. Module 1 explains why coaching matters. When you are ready, select Next to begin.",
-     "alt": "Module 1, screen 1: Why Coaching Matters"
+     "alt": "Module 1, screen 1: Why Coaching Matters",
+     "audio_ar": "audio/M1-01-ar.mp3",
+     "transcript_ar": "مرحباً بك في برنامج أساسيات الكوتشينج. سواءٌ كنتَ قد تمت ترقيتك إلى مدير مبيعات منذ بضعة أشهر، أو كنتَ تقود فريقاً منذ سنوات، فأنت تعلم أن نتائج فريقك ترتبط مباشرةً بمدى إتقانك لدور المدرب. يُعدّك هذا البرنامج الإلكتروني لورشة العمل، ويقدم لك الأفكار الأساسية، حتى نستثمر وقتنا معاً في التطبيق والممارسة. تشرح الوحدة الأولى أهمية الكوتشينج. عندما تكون مستعداً، اضغط على زر التالي للبدء."
     },
     {
      "img": "img/M1-02.jpg",
      "audio": "audio/M1-02.mp3",
      "transcript": "Here is what you will be able to do by the end. First, assess a rep's demonstrated ability and willingness to perform a specific task. Second, match your coaching style to that rep's readiness for that task. Third, plan, run and evaluate a focused coaching conversation. And fourth, use the workbook tools that you will bring with you to the workshop. Before you go further, download your pre-work workbook using the button on this screen. Several screens will ask you to stop and write in it. Then select Next to continue.",
      "alt": "Module 1, screen 2: What you will be able to do after this e-learning",
-     "workbookHero": true
+     "workbookHero": true,
+     "audio_ar": "audio/M1-02-ar.mp3",
+     "transcript_ar": "إليك ما ستتمكن من فعله في النهاية. أولاً، تقييم القدرة والرغبة اللتين أظهرهما المندوب فعلياً في أداء مهمة محددة. ثانياً، اختيار أسلوب الكوتشينج المناسب لجاهزيته في تلك المهمة. ثالثاً، التخطيط لمحادثة كوتشينج مركّزة وتنفيذها وتقييمها. ورابعاً، استخدام أدوات كراسة التدريب التي ستُحضرها معك إلى الورشة. قبل أن تتابع، حمّل كراسة التدريب من الزر الظاهر على هذه الشاشة، فهناك شاشات عديدة ستطلب منك التوقف والكتابة فيها. ثم اضغط على زر التالي."
     },
     {
      "img": "img/M1-03.jpg",
      "audio": "audio/M1-03.mp3",
      "transcript": "In any pharmaceutical company, we judge performance in two ways. What results were achieved, and how they were achieved. Target achievement, coverage and call frequency tell you the what. The skills and behaviours that produced those numbers tell you the how. Nowhere is the how more important than in your role as a coach. What you say and do with your reps, in the car, in the clinic waiting room, and in your monthly review, has a powerful influence on results. That is why coaching is a core part of your job as a first line manager. It is not something you do when there is spare time.",
-     "alt": "Module 1, screen 3: Results matter. So does how we get them."
+     "alt": "Module 1, screen 3: Results matter. So does how we get them.",
+     "audio_ar": "audio/M1-03-ar.mp3",
+     "transcript_ar": "في أي شركة أدوية، نحكم على الأداء بطريقتين: ما النتائج التي تحققت، وكيف تحققت. المستهدف البيعي ونسبة التغطية وعدد الزيارات تخبرك بما تحقق. أما المهارات والسلوكيات التي صنعت هذه الأرقام فهي التي تخبرك كيف تحقق. ودورك كمدرب هو أكثر ما يؤثر في هذا الجانب. فما تقوله وما تفعله مع مندوبيك، في السيارة، وفي صالة انتظار العيادة، وفي المراجعة الشهرية، له أثر كبير في النتائج. ولهذا فإن الكوتشينج جزء أساسي من عملك كمدير مبيعات، وليس نشاطاً تؤديه حين يتوفر لديك وقت فراغ."
     },
     {
      "img": "img/M1-04.jpg",
@@ -138,20 +156,26 @@ const DATA = {
         "detail": "Change a behaviour that is hurting results. Example: “You left without agreeing a next step. In every call, close with a clear commitment.”"
        }
       ]
-     }
+     },
+     "audio_ar": "audio/M1-04-ar.mp3",
+     "transcript_ar": "ببساطة، الكوتشينج هو تطوير أفراد فريقك. إنه عملية مستمرة تتناقش فيها أنت والمندوب حول كيفية تطوير المهارات التي يتطلبها العمل وتطبيقها. والمحرك الأساسي للكوتشينج هو التغذية الراجعة. فالتغذية الراجعة الجيدة تحقق واحداً من ثلاثة أهداف: تعزيز سلوك ناجح، أو تحسين سلوك جيد يمكن أن يصبح أفضل، أو تصحيح سلوك يضر بالنتائج. اضغط على كل كلمة في اللوحة لترى مثالاً. وتذكّر أن الكوتشينج ليس حدثاً يقع مرة واحدة، وليس مقتصراً على الزيارات المشتركة مع العملاء."
     },
     {
      "img": "img/M1-05.jpg",
      "audio": "audio/M1-05.mp3",
      "transcript": "Observing your reps with customers is important, but it is only one coaching opportunity. Coaching also happens in your monthly business review, in the cycle meeting, at the mid-year and annual review, and in a quick five minute phone call after a rep has seen a key customer. Because coaching is ongoing, every one of these moments is a chance to build skills. Managers who only coach during co-visits usually coach too little, and too late.",
-     "alt": "Module 1, screen 5: Coaching happens all through the year"
+     "alt": "Module 1, screen 5: Coaching happens all through the year",
+     "audio_ar": "audio/M1-05-ar.mp3",
+     "transcript_ar": "ملاحظة المندوب مع العملاء أمر مهم، لكنها فرصة واحدة فقط من فرص الكوتشينج. فالكوتشينج يحدث أيضاً في المراجعة الشهرية للأعمال، وفي اجتماع الدورة، وفي مراجعة منتصف العام ونهايته، وفي مكالمة هاتفية قصيرة بعد أن يقابل المندوب عميلاً مهماً. ولأن الكوتشينج عملية مستمرة، فكل لحظة من هذه اللحظات فرصة لبناء مهارة. أما المديرون الذين يقتصر الكوتشينج لديهم على الزيارات المشتركة، فغالباً ما يقدمونه بقدر قليل، وفي وقت متأخر."
     },
     {
      "img": "img/M1-06.jpg",
      "audio": "audio/M1-06.mp3",
      "transcript": "Time to stop and reflect. Turn to Activity 1, My Coaching Today, in your workbook. Think of the last three times you coached one of your reps. For each one, write down where it happened, what you focused on, and how useful you think it was for the rep, on a scale of one to five. Be honest. Nobody will grade this. When you have finished, select Next to continue.",
      "alt": "Module 1, screen 6: My Coaching Today",
-     "wb": "Activity 1: My Coaching Today"
+     "wb": "Activity 1: My Coaching Today",
+     "audio_ar": "audio/M1-06-ar.mp3",
+     "transcript_ar": "حان وقت التوقف والتفكير. افتح النشاط الأول (My Coaching Today) في كراسة التدريب. تذكّر آخر ثلاث مرات قدّمت فيها الكوتشينج لأحد أفراد فريقك. ولكل مرة، اكتب أين حدثت، وعلامَ ركزت، ومدى فائدتها للمندوب في رأيك، على مقياس من واحد إلى خمسة. كن صريحاً مع نفسك، فلن يقيّم أحد هذه الصفحة. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M1-07.jpg",
@@ -175,13 +199,17 @@ const DATA = {
         "detail": "Document what you observed and agreed, then follow up so the coaching continues between visits."
        }
       ]
-     }
+     },
+     "audio_ar": "audio/M1-07-ar.mp3",
+     "transcript_ar": "فهم معنى الكوتشينج هو الجزء السهل، أما إتقانه فيحتاج إلى وقت وممارسة وتغذية راجعة. ولهذا نستخدم عملية بسيطة من ثلاث مراحل: التخطيط، والتنفيذ، والتقييم (Plan, Implement, Evaluate). في مرحلة التخطيط، تراجع البيانات، وتقيّم جاهزية المندوب، وتحدد المهمة التي ستركز عليها. وفي مرحلة التنفيذ، تلاحظ الأداء وتقيّمه، وتسأل المندوب عن رأيه، وتقدم التغذية الراجعة، وتستكشفان الأفكار معاً، وتتفقان على خطوات عملية. وفي مرحلة التقييم، توثّق ما حدث وتتابعه. اضغط على كل مرحلة في اللوحة لترى ملخصها. وتتناول الوحدات الثلاث القادمة كل مرحلة على حدة."
     },
     {
      "img": "img/M1-08.jpg",
      "audio": "audio/M1-08.mp3",
      "transcript": "Well done. You have completed Module 1. You saw that coaching develops the how behind your team's results, that feedback can reinforce, enhance or correct behaviour, and that coaching happens all year round, not only on co-visits. Next, complete the short knowledge check. Then, in Module 2, you will learn how to plan a focused coaching conversation.",
-     "alt": "Module 1, screen 8: Module 1 summary"
+     "alt": "Module 1, screen 8: Module 1 summary",
+     "audio_ar": "audio/M1-08-ar.mp3",
+     "transcript_ar": "أحسنت، لقد أكملت الوحدة الأولى. رأينا أن الكوتشينج يطوّر الطريقة التي تتحقق بها نتائج فريقك، وأن التغذية الراجعة يمكن أن تعزز السلوك أو تحسّنه أو تصححه، وأن الكوتشينج يحدث طوال العام، لا في الزيارات المشتركة فقط. أجب الآن عن اختبار المعرفة القصير، ثم ستتعلم في الوحدة الثانية كيف تخطط لمحادثة كوتشينج مركّزة."
     }
    ],
    "quiz": [
@@ -240,51 +268,67 @@ const DATA = {
      "img": "img/M2-01.jpg",
      "audio": "audio/M2-01.mp3",
      "transcript": "Welcome to Module 2: Plan. In this module you will learn how to build a focused plan before any coaching conversation. When you are ready, select Next to begin.",
-     "alt": "Module 2, screen 1: Plan: Create a Focused Coaching Plan"
+     "alt": "Module 2, screen 1: Plan: Create a Focused Coaching Plan",
+     "audio_ar": "audio/M2-01-ar.mp3",
+     "transcript_ar": "مرحباً بك في الوحدة الثانية: التخطيط. في هذه الوحدة ستتعلم كيف تُعدّ خطة مركّزة قبل أي محادثة كوتشينج. عندما تكون مستعداً، اضغط على زر التالي."
     },
     {
      "img": "img/M2-02.jpg",
      "audio": "audio/M2-02.mp3",
      "transcript": "In this module you will identify the data to review before a coaching conversation, separate competencies, skills, tasks and behaviours, assess a rep's demonstrated ability and willingness for a specific task, and place the rep at the right readiness level for that task.",
-     "alt": "Module 2, screen 2: In this module you will"
+     "alt": "Module 2, screen 2: In this module you will",
+     "audio_ar": "audio/M2-02-ar.mp3",
+     "transcript_ar": "في هذه الوحدة ستتعرف على البيانات التي ينبغي مراجعتها قبل محادثة الكوتشينج، وستميّز بين الجدارات والمهارات والمهام والسلوكيات، وستقيّم القدرة والرغبة اللتين أظهرهما المندوب في مهمة محددة، وستحدد مستوى جاهزيته في تلك المهمة."
     },
     {
      "img": "img/M2-03.jpg",
      "audio": "audio/M2-03.mp3",
      "transcript": "Notice that this stage is not just plan. It is create a focused plan. When you spend a day in the field with a rep, you will see dozens of things you could comment on. If you comment on all of them, the rep remembers none of them. Planning means choosing a clear focus, so the rep knows exactly what to do more of, less of, or differently. There are three steps: review the data, assess readiness, and identify the task focus. Your workbook guide on page 2 summarises the whole process.",
      "alt": "Module 2, screen 3: Plan: build a focused plan, not a general one",
-     "wb": "Workbook Guide"
+     "wb": "Workbook Guide",
+     "audio_ar": "audio/M2-03-ar.mp3",
+     "transcript_ar": "لاحظ أن هذه المرحلة ليست مجرد تخطيط، بل إعداد خطة مركّزة. حين تقضي يوماً في الميدان مع أحد المندوبين، سترى عشرات الأمور التي يمكنك التعليق عليها. وإذا علّقت عليها جميعاً، فلن يتذكر المندوب أياً منها. التخطيط يعني أن تختار تركيزاً واضحاً، حتى يعرف المندوب بالضبط ما الذي عليه أن يُكثر منه، أو يُقلل منه، أو يؤديه بطريقة مختلفة. وهناك ثلاث خطوات: مراجعة البيانات، وتقييم الجاهزية، وتحديد المهمة محل التركيز. وستجد ملخص العملية كاملة في الصفحة الثانية من كراسة التدريب."
     },
     {
      "img": "img/M2-04.jpg",
      "audio": "audio/M2-04.mp3",
      "transcript": "Start by revisiting what you and the rep agreed in the last coaching conversation. Did the rep do it? Then look at the other data you have. Your co-visit reports and personal notes. Sales achievement, coverage and call frequency since the last discussion. The rep's customer plans for key doctors and pharmacies. And the development goals in their annual objectives. Together, these tell you where coaching will make the biggest difference. Once you have reviewed the data, it is time to assess readiness.",
-     "alt": "Module 2, screen 4: Review the data: what has happened since the last coaching?"
+     "alt": "Module 2, screen 4: Review the data: what has happened since the last coaching?",
+     "audio_ar": "audio/M2-04-ar.mp3",
+     "transcript_ar": "ابدأ بالعودة إلى ما اتفقتما عليه في آخر محادثة كوتشينج. هل نفّذه المندوب أم لا؟ ثم راجع بقية البيانات المتاحة لديك: تقارير الزيارات المشتركة وملاحظاتك الشخصية، والمبيعات ونسبة التغطية وعدد الزيارات منذ آخر مراجعة، وخطط المندوب للأطباء والصيدليات المهمة، وأهداف التطوير في أهدافه السنوية. هذه المصادر مجتمعة تخبرك أين سيُحدث الكوتشينج الفارق الأكبر. وبعد مراجعة البيانات، يأتي وقت تقييم الجاهزية."
     },
     {
      "img": "img/M2-05.jpg",
      "audio": "audio/M2-05.mp3",
      "transcript": "When we talk about performance readiness, we mean a combination of two things. Demonstrated ability is the rep's knowledge, experience and skill. Demonstrated willingness is the rep's confidence and motivation. Notice the word demonstrated. You assess what you have actually seen, not what you assume. And here is the most important point: you assess readiness for a specific task. It is not a label for the whole person. A rep can be excellent at building relationships with pharmacists, and still struggle to handle a doctor's objection on price.",
-     "alt": "Module 2, screen 5: Readiness = demonstrated ability + demonstrated willingness"
+     "alt": "Module 2, screen 5: Readiness = demonstrated ability + demonstrated willingness",
+     "audio_ar": "audio/M2-05-ar.mp3",
+     "transcript_ar": "عندما نتحدث عن الجاهزية، فنحن نقصد عنصرين معاً. القدرة التي ظهرت فعلياً، وتشمل المعرفة والخبرة والمهارة. والرغبة التي ظهرت فعلياً، وتشمل الثقة والدافعية. انتبه إلى عبارة «ظهرت فعلياً»، فأنت تقيّم ما رأيته بنفسك، لا ما تفترضه. والنقطة الأهم: أنت تقيّم الجاهزية لمهمة محددة، ولا تضع وصفاً عاماً للشخص كله. فقد يكون المندوب ممتازاً في بناء العلاقات مع الصيادلة، وفي الوقت نفسه ما زال يواجه صعوبة في الرد على اعتراض الطبيب على السعر."
     },
     {
      "img": "img/M2-06.jpg",
      "audio": "audio/M2-06.mp3",
      "transcript": "To coach a task, you need to be clear about four terms. Let's use football. A competency is a broad area of performance, for example, play football. A skill is a specific capability inside it, such as passing the ball. A task is one application of that skill that a coach chooses to focus on, for example, pass to a team mate using the inside of the foot. And behaviours are what you actually see and hear: the player plants the other foot beside the ball, keeps eyes on the target, and follows through. A good coach does not say play better. He coaches the task, using the behaviours.",
-     "alt": "Module 2, screen 6: From competency to behaviour: a football example"
+     "alt": "Module 2, screen 6: From competency to behaviour: a football example",
+     "audio_ar": "audio/M2-06-ar.mp3",
+     "transcript_ar": "لكي تقدم الكوتشينج لمهمة ما، عليك أن تكون واضحاً في أربعة مصطلحات. لنأخذ مثالاً من كرة القدم. الجدارة مجال أداء واسع، مثل لعب كرة القدم. والمهارة قدرة محددة داخله، مثل التمرير. والمهمة تطبيق واحد لهذه المهارة يختار المدرب التركيز عليه، مثل التمرير إلى الزميل بباطن القدم. أما السلوكيات فهي ما تراه وتسمعه فعلياً: يضع اللاعب قدمه الأخرى بجوار الكرة، وعيناه على الهدف، ويُكمل الحركة. المدرب الماهر لا يقول للاعب «العب بشكل أفضل»، بل يدرّبه على المهمة من خلال السلوكيات."
     },
     {
      "img": "img/M2-07.jpg",
      "audio": "audio/M2-07.mp3",
      "transcript": "Now the same logic in a rep's job. The competency is customer interaction. One skill inside it is engage and sell. The task you choose to coach might be: open the call and identify the doctor's needs for the target patient group. And the behaviours you would see and hear are things like: the rep links the opening to the doctor's own practice, asks open questions about the patients he sees, then listens and summarises before presenting. When you coach at the level of tasks and behaviours, your feedback becomes specific and usable.",
-     "alt": "Module 2, screen 7: The same logic in a medical rep's job"
+     "alt": "Module 2, screen 7: The same logic in a medical rep's job",
+     "audio_ar": "audio/M2-07-ar.mp3",
+     "transcript_ar": "والآن المنطق نفسه في عمل المندوب. الجدارة هي التعامل مع العميل. ومن المهارات داخلها مهارة التفاعل والبيع. والمهمة التي قد تختار تقديم الكوتشينج فيها هي: افتتاح الزيارة وتحديد احتياجات الطبيب لفئة المرضى المستهدفة. أما السلوكيات التي ستراها وتسمعها فهي: يربط المندوب الافتتاحية بممارسة الطبيب نفسه، ويطرح أسئلة مفتوحة عن المرضى الذين يعالجهم، ويستمع ويلخّص قبل أن يعرض المنتج. عندما تقدم الكوتشينج على مستوى المهام والسلوكيات، تصبح تغذيتك الراجعة محددة وقابلة للتطبيق."
     },
     {
      "img": "img/M2-08.jpg",
      "audio": "audio/M2-08.mp3",
      "transcript": "Turn to Activity 2, Break It Down, in your workbook. Choose one competency your team needs most right now. Then write one skill within it, one specific task, and three behaviours you would expect to see and hear when the task is done well. Use a real situation from your territory. When you have done this, select Next to continue.",
      "alt": "Module 2, screen 8: Break It Down",
-     "wb": "Activity 2: Break It Down"
+     "wb": "Activity 2: Break It Down",
+     "audio_ar": "audio/M2-08-ar.mp3",
+     "transcript_ar": "افتح النشاط الثاني (Break It Down) في كراسة التدريب. اختر جدارة واحدة يحتاجها فريقك أكثر من غيرها الآن. ثم اكتب داخلها مهارة واحدة، ومهمة محددة، وثلاثة سلوكيات تتوقع أن تراها وتسمعها عندما تُؤدّى المهمة بشكل صحيح. استخدم موقفاً حقيقياً من منطقتك. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M2-09.jpg",
@@ -309,20 +353,26 @@ const DATA = {
         "detail": "CAN'T: lacks the skill or experience for this task. WON'T: performance is unacceptable or marginal and the rep does not own the problem."
        }
       ]
-     }
+     },
+     "audio_ar": "audio/M2-09-ar.mp3",
+     "transcript_ar": "هذه الشبكة من أهم الأفكار في البرنامج. القدرة التي ظهرت فعلياً على المحور الأفقي، والرغبة التي ظهرت فعلياً على المحور الرأسي. ومعاً يمنحاننا ثلاثة مستويات للجاهزية في مهمة محددة. مستوى «يستطيع» (CAN)، أي من يستطيع أداء المهمة. ومستوى «يمكنه» (COULD)، أي من يمكنه أداؤها. ومستوى «لا يستطيع» (CAN'T) أو «لا يرغب» (WON'T). لاحظ أن المستوى الأوسط مساحة واسعة: تضم المندوب الجديد المتحمس الذي ما زال يتعلم، وتضم المندوب صاحب الخبرة الذي فقد حماسه. اضغط على كل مستوى في اللوحة لتقرأ وصفه. وستجد ملخصاً في الصفحة الخامسة من كراسة التدريب."
     },
     {
      "img": "img/M2-10.jpg",
      "audio": "audio/M2-10.mp3",
      "transcript": "Turn to Activity 3, Plan a Coaching Conversation. Pick one rep you will co-visit in the coming weeks. List the data you will review, choose one task to focus on, and decide where the rep stands on that task: Can, Could, or Can't or Won't. Write down the evidence for your choice. You will use this plan in the workshop. When you are done, select Next to continue.",
      "alt": "Module 2, screen 10: Plan a Coaching Conversation",
-     "wb": "Activity 3: Plan a Coaching Conversation"
+     "wb": "Activity 3: Plan a Coaching Conversation",
+     "audio_ar": "audio/M2-10-ar.mp3",
+     "transcript_ar": "افتح النشاط الثالث (Plan a Coaching Conversation). اختر مندوباً واحداً ستقوم معه بزيارة مشتركة خلال الأسابيع القادمة. اكتب البيانات التي ستراجعها، واختر مهمة واحدة للتركيز عليها، وحدد مستواه فيها: «يستطيع» (CAN)، أو «يمكنه» (COULD)، أو «لا يستطيع» (CAN'T) أو «لا يرغب» (WON'T). واكتب الدليل على اختيارك. ستستخدم هذه الخطة في الورشة. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M2-11.jpg",
      "audio": "audio/M2-11.mp3",
      "transcript": "Well done. You have completed Module 2. A plan means a focused plan, built on data, with one to three tasks. Readiness is ability plus willingness, and you assess it task by task, not person by person. Complete the knowledge check, and then move to Module 3, where you will learn how to implement coaching and adapt your style.",
-     "alt": "Module 2, screen 11: Module 2 summary"
+     "alt": "Module 2, screen 11: Module 2 summary",
+     "audio_ar": "audio/M2-11-ar.mp3",
+     "transcript_ar": "أحسنت، لقد أكملت الوحدة الثانية. الخطة تعني خطة مركّزة، مبنية على البيانات، تتناول من مهمة إلى ثلاث مهام. والجاهزية هي القدرة مضافاً إليها الرغبة، وتُقيَّم مهمةً بمهمة، لا شخصاً بشخص. أجب عن اختبار المعرفة، ثم انتقل إلى الوحدة الثالثة، حيث ستتعلم كيف تنفذ الكوتشينج وتكيّف أسلوبك."
     }
    ],
    "quiz": [
@@ -381,87 +431,115 @@ const DATA = {
      "img": "img/M3-01.jpg",
      "audio": "audio/M3-01.mp3",
      "transcript": "Welcome to Module 3: Implement. This is the longest module, and the heart of the course. When you are ready, select Next to begin.",
-     "alt": "Module 3, screen 1: Implement: Coach the Conversation"
+     "alt": "Module 3, screen 1: Implement: Coach the Conversation",
+     "audio_ar": "audio/M3-01-ar.mp3",
+     "transcript_ar": "مرحباً بك في الوحدة الثالثة: التنفيذ. هذه أطول وحدة، وهي قلب البرنامج. عندما تكون مستعداً، اضغط على زر التالي."
     },
     {
      "img": "img/M3-02.jpg",
      "audio": "audio/M3-02.mp3",
      "transcript": "In this module you will observe and assess performance against clear standards, base your feedback on observable behaviour rather than judgment, choose a Directive, Participative or Encouraging style to match the rep's readiness, and structure the conversation using the O.F.T.E.N. model.",
-     "alt": "Module 3, screen 2: In this module you will"
+     "alt": "Module 3, screen 2: In this module you will",
+     "audio_ar": "audio/M3-02-ar.mp3",
+     "transcript_ar": "في هذه الوحدة ستلاحظ الأداء وتقيّمه وفق معايير واضحة، وستبني تغذيتك الراجعة على السلوك الظاهر لا على الأحكام، وستختار الأسلوب التوجيهي (Directive) أو التشاركي (Participative) أو التشجيعي (Encouraging) بحسب جاهزية المندوب، وستنظّم المحادثة باستخدام نموذج O.F.T.E.N.."
     },
     {
      "img": "img/M3-03.jpg",
      "audio": "audio/M3-03.mp3",
      "transcript": "When you implement coaching, you observe performance, assess it, ask the rep for his or her view, offer feedback, explore ideas for improvement, and commit to action. Let's take these steps one at a time.",
-     "alt": "Module 3, screen 3: Implement: six steps in the conversation"
+     "alt": "Module 3, screen 3: Implement: six steps in the conversation",
+     "audio_ar": "audio/M3-03-ar.mp3",
+     "transcript_ar": "عندما تنفذ الكوتشينج، فإنك تلاحظ الأداء، وتقيّمه، وتسأل المندوب عن رأيه، وتقدم التغذية الراجعة، وتستكشفان معاً أفكاراً للتحسين، وتلتزمان بخطوات للتغيير. لنتناول هذه الخطوات واحدة تلو الأخرى."
     },
     {
      "img": "img/M3-04.jpg",
      "audio": "audio/M3-04.mp3",
      "transcript": "Your reps have a complex job, and you cannot give feedback on everything. Your plan already set a focus of two to three tasks, so observe those. Then ask yourself two questions. How clear am I about what I see and hear? And can I recognise and describe what good looks like for this task? If you cannot describe good, you cannot give meaningful feedback. This brings us back to standards.",
-     "alt": "Module 3, screen 4: Observe performance: do you know what “good” looks like?"
+     "alt": "Module 3, screen 4: Observe performance: do you know what “good” looks like?",
+     "audio_ar": "audio/M3-04-ar.mp3",
+     "transcript_ar": "عمل مندوبيك معقد، ولن تستطيع تقديم تغذية راجعة على كل شيء. لقد حددت خطتك بالفعل التركيز على مهمتين أو ثلاث، فلاحظ هذه المهام. ثم اسأل نفسك سؤالين: ما مدى وضوح ما أراه وأسمعه؟ وهل أستطيع أن أصف الأداء الجيد في هذه المهمة؟ إن لم تستطع وصف الأداء الجيد، فلن تتمكن من تقديم تغذية راجعة ذات معنى. وهذا يعيدنا إلى المعايير."
     },
     {
      "img": "img/M3-05.jpg",
      "audio": "audio/M3-05.mp3",
      "transcript": "An effective coach knows the performance standards, meaning what reps are supposed to do, and can recognise good when it happens. Standards come from several places: your rep competency framework, the selling skills model your company trains, the company's values and expected behaviours, and the objective the rep set for this specific call. Compare what you observed against these standards, not against how you would have done it yourself.",
-     "alt": "Module 3, screen 5: Assess performance against standards"
+     "alt": "Module 3, screen 5: Assess performance against standards",
+     "audio_ar": "audio/M3-05-ar.mp3",
+     "transcript_ar": "المدرب الفعّال يعرف معايير الأداء، أي ما يُفترض بالمندوبين أن يفعلوه، ويتعرّف على الأداء الجيد حين يراه. وتأتي المعايير من عدة مصادر: إطار جدارات المندوبين، ونموذج مهارات البيع الذي تدرّب عليه شركتك، وقيم الشركة والسلوكيات المتوقعة، والهدف الذي وضعه المندوب لهذه الزيارة تحديداً. قارن ما لاحظته بهذه المعايير، لا بالطريقة التي كنت ستؤدي بها المهمة أنت."
     },
     {
      "img": "img/M3-06.jpg",
      "audio": "audio/M3-06.mp3",
      "transcript": "Before you offer feedback, invite the rep to analyse their own performance. Ask: how do you think that call went? What worked well? If you could repeat it, what would you change? This does three things. It builds the rep's self-awareness. It increases ownership, because people act on conclusions they reach themselves. And it tells you a lot about the rep's readiness for the task.",
-     "alt": "Module 3, screen 6: Ask for their view before you give yours"
+     "alt": "Module 3, screen 6: Ask for their view before you give yours",
+     "audio_ar": "audio/M3-06-ar.mp3",
+     "transcript_ar": "قبل أن تقدم التغذية الراجعة، اطلب من المندوب أن يحلل أداءه بنفسه. اسأله: كيف ترى سير هذه الزيارة؟ ما الذي نجح؟ ولو أعدتها، ماذا ستغيّر؟ هذا يحقق ثلاثة أمور: يبني وعي المندوب بذاته، ويعزز شعوره بالمسؤولية لأن الناس ينفذون الاستنتاجات التي يصلون إليها بأنفسهم، ويكشف لك الكثير عن جاهزيته للمهمة."
     },
     {
      "img": "img/M3-07.jpg",
      "audio": "audio/M3-07.mp3",
      "transcript": "This distinction is critical. Judgments are subjective. They come from assumptions and biases we may not even know we have. If you say: you were not confident with the doctor, the rep can argue, or feel attacked, and still not know what to change. Observable behaviours are the words and actions anyone could see and hear if they were there, and others would agree with. You started presenting before asking a single question. That is specific, fair and usable. Always base feedback on behaviour.",
-     "alt": "Module 3, screen 7: Feedback is based on observable behaviour"
+     "alt": "Module 3, screen 7: Feedback is based on observable behaviour",
+     "audio_ar": "audio/M3-07-ar.mp3",
+     "transcript_ar": "هذا التمييز بالغ الأهمية. الأحكام ذاتية، تنبع من افتراضات وتحيزات قد لا ندركها. فإذا قلت: «لم تكن واثقاً من نفسك مع الطبيب»، فقد يجادلك المندوب، أو يشعر بأنه موضع هجوم، ويبقى مع ذلك غير مدرك لما ينبغي تغييره. أما السلوك الظاهر فهو الأقوال والأفعال التي كان سيراها ويسمعها أي شخص حاضر، ويتفق عليها الآخرون. «بدأتَ عرض المنتج قبل أن تطرح أي سؤال». هذه عبارة محددة وعادلة وقابلة للتطبيق. ابنِ تغذيتك الراجعة دائماً على السلوك."
     },
     {
      "img": "img/M3-08.jpg",
      "audio": "audio/M3-08.mp3",
      "transcript": "Turn to Activity 4, Judgment or Behaviour, in your workbook. Read the ten feedback statements and mark each one J for judgment or B for behaviour. Then rewrite three of the judgments as behaviour-based feedback. The answers are on the last page of the workbook, but try it on your own first. When you are done, select Next to continue.",
      "alt": "Module 3, screen 8: Judgment or Behaviour?",
-     "wb": "Activity 4: Judgment or Behaviour?"
+     "wb": "Activity 4: Judgment or Behaviour?",
+     "audio_ar": "audio/M3-08-ar.mp3",
+     "transcript_ar": "افتح النشاط الرابع (Judgment or Behaviour?) في كراسة التدريب. اقرأ العبارات العشر، وضع علامة J إذا كانت العبارة حكماً، أو علامة B إذا كانت تصف سلوكاً. ثم أعد صياغة ثلاثة من الأحكام في صورة تغذية راجعة مبنية على السلوك. ستجد الإجابات في الصفحة الأخيرة من الكراسة، لكن حاول بنفسك أولاً. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M3-09.jpg",
      "audio": "audio/M3-09.mp3",
      "transcript": "Once you know the rep's readiness for a specific task, you adjust your style. Be Directive with reps who CAN'T or WON'T perform the task. Be Participative with reps who COULD perform it. And be Encouraging with reps who CAN. Directive means high guidance. Participative means a balance of guidance and support. Encouraging means high support and more freedom. A summary is on page 8 of your workbook. Let's look at each level in turn.",
      "alt": "Module 3, screen 9: Match your coaching style to readiness",
-     "wb": "Quick Reference: Coaching Styles"
+     "wb": "Quick Reference: Coaching Styles",
+     "audio_ar": "audio/M3-09-ar.mp3",
+     "transcript_ar": "عندما تعرف مستوى جاهزية المندوب لمهمة محددة، عليك أن تكيّف أسلوبك. استخدم الأسلوب التوجيهي (Directive) مع من هو في مستوى «لا يستطيع» (CAN'T) أو «لا يرغب» (WON'T). واستخدم الأسلوب التشاركي (Participative) مع من هو في مستوى «يمكنه» (COULD). واستخدم الأسلوب التشجيعي (Encouraging) مع من هو في مستوى «يستطيع» (CAN). الأسلوب التوجيهي يعني توجيهاً عالياً، والأسلوب التشاركي يعني توازناً بين التوجيه والدعم، أما الأسلوب التشجيعي فيعني دعماً عالياً ومساحة أكبر من الحرية. ستجد ملخصاً لذلك في الصفحة الثامنة من كراسة التدريب. لنتعرف الآن على كل مستوى."
     },
     {
      "img": "img/M3-10.jpg",
      "audio": "audio/M3-10.mp3",
      "transcript": "Let's start with CAN'T. A rep at this level for a task needs to learn the basics. You may see someone who lacks the skill or experience, is unsure how to move forward, lacks confidence, and may not even be aware there is a problem. This is common in a young team where many reps are in their first or second year. Your response is the Directive style, with high guidance. Give specific direction on what to do and how. Explain what they most need to learn. Pair them with an experienced colleague, give them chances to practise, encourage them, and check in regularly.",
-     "alt": "Module 3, screen 10: CAN'T: needs to learn the basics"
+     "alt": "Module 3, screen 10: CAN'T: needs to learn the basics",
+     "audio_ar": "audio/M3-10-ar.mp3",
+     "transcript_ar": "لنبدأ بمستوى «لا يستطيع» (CAN'T). المندوب في هذا المستوى في مهمة معينة يحتاج إلى تعلّم الأساسيات. قد تلاحظ أنه يفتقر إلى المهارة أو الخبرة، ولا يعرف كيف يمضي قدماً، وثقته بنفسه منخفضة، وقد لا يدرك أصلاً أن هناك مشكلة. وهذا شائع في الفرق الشابة، التي يكون معظم أفرادها في عامهم الأول أو الثاني. واستجابتك هي الأسلوب التوجيهي (Directive)، بتوجيه عالٍ. حدد له بدقة ما يفعله وكيف يفعله. ووضّح له أكثر ما يحتاج إلى تعلّمه. اجعله يعمل مع زميل صاحب خبرة، وأتِح له فرصاً للتدريب العملي، وشجّعه، وتابعه بانتظام."
     },
     {
      "img": "img/M3-11.jpg",
      "audio": "audio/M3-11.mp3",
      "transcript": "Now WON'T. Here performance on the task is unacceptable or marginal, and the rep does not own the problem. He may be defensive, or challenge you when you raise it. Again, the style is Directive, this time with the highest guidance. State clearly how performance compares with the standard. Explain the consequences of not improving. Supervise closely, involve HR and your own manager when needed, and agree a written action plan with specific expectations and deadlines. Be firm, fair and factual.",
-     "alt": "Module 3, screen 11: WON'T: needs to turn performance around"
+     "alt": "Module 3, screen 11: WON'T: needs to turn performance around",
+     "audio_ar": "audio/M3-11-ar.mp3",
+     "transcript_ar": "والآن مستوى «لا يرغب» (WON'T). هنا يكون الأداء في المهمة غير مقبول أو عند الحد الأدنى، ولا يرى المندوب أن المشكلة مشكلته. وقد يكون دفاعياً، أو يتحداك حين تطرح الموضوع. والأسلوب هنا أيضاً هو التوجيهي (Directive)، ولكن بأعلى درجات التوجيه. أوضح له بجلاء موقع أدائه مقارنة بالمعيار. وبيّن له العواقب إن لم يتحسن. وتابع عن قرب، وأشرك إدارة الموارد البشرية ومديرك المباشر عند الحاجة، واتفقا على خطة عمل مكتوبة تتضمن توقعات محددة ومواعيد نهائية. كن حازماً، وعادلاً، ومستنداً إلى الحقائق."
     },
     {
      "img": "img/M3-12.jpg",
      "audio": "audio/M3-12.mp3",
      "transcript": "Most reps, for most tasks, sit at the COULD level. Let's look first at the rep who is enthusiastic but inexperienced. You see curiosity, lots of questions, volunteering for everything, and fast learning, but also uneven results, with some successes and some setbacks. Your style is Participative. Ask how they would approach the situation, and support their ideas where you can. Refine those ideas, suggest other approaches or resources, and help them set realistic limits. They can do it all, just not all at once.",
-     "alt": "Module 3, screen 12: COULD: enthusiastic but inexperienced"
+     "alt": "Module 3, screen 12: COULD: enthusiastic but inexperienced",
+     "audio_ar": "audio/M3-12-ar.mp3",
+     "transcript_ar": "معظم المندوبين، في معظم المهام، يكونون في مستوى «يمكنه» (COULD). لننظر أولاً إلى المندوب المتحمس الذي ما زال يفتقر إلى الخبرة. ستلاحظ فضولاً، وأسئلة كثيرة، وتطوعاً في كل شيء، وتعلماً سريعاً، لكن نتائجه متذبذبة، تنجح مرة وتتعثر أخرى. وأسلوبك هنا هو التشاركي (Participative). اسأله كيف سيتعامل مع الموقف، وادعم أفكاره قدر الإمكان. طوّر أفكاره، واقترح عليه طرقاً أو موارد أخرى، وساعده على وضع حدود واقعية. فهو قادر على إنجاز كل شيء، ولكن ليس دفعة واحدة."
     },
     {
      "img": "img/M3-13.jpg",
      "audio": "audio/M3-13.mp3",
      "transcript": "The other side of COULD is the experienced rep who has lost motivation. The ability is there, but you see someone avoiding initiative, avoiding you, and sometimes affecting the mood of the team. Your style is still Participative, with a balance of guidance and support. Clarify mutual expectations. Show, with specific examples, how the behaviour affects results and the team. Decide how much direction this person needs, and explore the root cause together. It may be workload, recognition, a territory change, or something personal. Then agree what will change.",
-     "alt": "Module 3, screen 13: COULD: experienced but demotivated"
+     "alt": "Module 3, screen 13: COULD: experienced but demotivated",
+     "audio_ar": "audio/M3-13-ar.mp3",
+     "transcript_ar": "الوجه الآخر لمستوى «يمكنه» (COULD) هو المندوب صاحب الخبرة الذي فقد حماسه. القدرة موجودة، لكنك تلاحظ أنه لا يبادر، ويتجنبك، وقد يؤثر أحياناً على روح الفريق. وأسلوبك هنا أيضاً التشاركي (Participative)، بتوازن بين التوجيه والدعم. وضّحا التوقعات المتبادلة. وبيّن بأمثلة محددة كيف يؤثر هذا السلوك على النتائج وعلى الفريق. وحدد مقدار التوجيه الذي يحتاجه، وابحثا معاً عن السبب الحقيقي. فقد يكون ضغط العمل، أو الشعور بعدم التقدير، أو تغييراً في المنطقة، أو أمراً شخصياً. ثم اتفقا على ما سيتغير."
     },
     {
      "img": "img/M3-14.jpg",
      "audio": "audio/M3-14.mp3",
      "transcript": "Finally, CAN. This rep performs the task very well and wants to stretch. You see sound decisions, fresh ideas for customers, early warnings about problems and opportunities, and often support for newer colleagues. Your style is Encouraging, with high support. Clarify the outcomes you want, then let the rep decide what and how. Share ideas only if asked. Remove the barriers in their way, and keep giving feedback. Strong performers still need recognition and challenge, or they leave.",
-     "alt": "Module 3, screen 14: CAN: needs to stretch"
+     "alt": "Module 3, screen 14: CAN: needs to stretch",
+     "audio_ar": "audio/M3-14-ar.mp3",
+     "transcript_ar": "وأخيراً مستوى «يستطيع» (CAN). هذا المندوب يؤدي المهمة بإتقان، ويبحث عن تحدٍّ أكبر. ستلاحظ قرارات سليمة، وأفكاراً جديدة لخدمة العملاء، وتنبيهاً مبكراً إلى المشكلات والفرص، وغالباً ما يساعد زملاءه الجدد. وأسلوبك هنا هو التشجيعي (Encouraging)، بدعم عالٍ. وضّح النتائج التي تريدها، ثم اترك له أن يقرر ماذا يفعل وكيف. شارك أفكارك فقط إن طلبها. أزل العقبات من طريقه، واستمر في تقديم التغذية الراجعة. فأصحاب الأداء المتميز يحتاجون أيضاً إلى التقدير والتحدي، وإلا رحلوا."
     },
     {
      "img": "img/M3-15.jpg",
@@ -485,14 +563,18 @@ const DATA = {
         "detail": "“If you were running this district, what would you decide, and why?”<br><br>“You clearly understand this hospital's priorities. What do you plan to do next?”"
        }
       ]
-     }
+     },
+     "audio_ar": "audio/M3-15-ar.mp3",
+     "transcript_ar": "كيف يبدو كل أسلوب في الكلام؟ الأسلوب التوجيهي واضح ومحدد: «لكي تبدأ بشكل صحيح، دعنا نراجع الخطوات التي أراها أساسية ولا يمكن التنازل عنها». والأسلوب التشاركي يسأل ويبني معك: «ساعدني على فهم كيف توصلت إلى هذا القرار». والأسلوب التشجيعي يسلّم المسؤولية: «لو كنتَ أنت المسؤول عن هذه المنطقة، ماذا كنت ستقرر، ولماذا؟». اضغط على كل أسلوب في اللوحة لتقرأ مزيداً من الأمثلة."
     },
     {
      "img": "img/M3-16.jpg",
      "audio": "audio/M3-16.mp3",
      "transcript": "Turn to Activity 5, Match the Style. You will read four short cases about reps in an Egyptian pharma team. For each one, decide the readiness level for the task described, choose the coaching style, and write the first sentence you would say to the rep. When you are done, select Next to continue.",
      "alt": "Module 3, screen 16: Match the Style",
-     "wb": "Activity 5: Match the Style"
+     "wb": "Activity 5: Match the Style",
+     "audio_ar": "audio/M3-16-ar.mp3",
+     "transcript_ar": "افتح النشاط الخامس (Match the Style). ستقرأ أربع حالات قصيرة عن مندوبين في فريق أدوية مصري. ولكل حالة، حدد مستوى الجاهزية للمهمة المذكورة، واختر أسلوب الكوتشينج، واكتب أول جملة ستقولها للمندوب. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M3-17.jpg",
@@ -525,13 +607,17 @@ const DATA = {
         "detail": "Commit to specific actions, timing, and how you will follow up."
        }
       ]
-     }
+     },
+     "audio_ar": "audio/M3-17-ar.mp3",
+     "transcript_ar": "ولكي تجمع كل ما سبق، استخدم نموذج O.F.T.E.N. لتنظيم المحادثة. الافتتاح (Open): حدد النبرة والهدف، واسأل المندوب عن رأيه. التركيز (Focus): اتفقا على مهمة إلى ثلاث مهام هي الأهم. الانتقال (Transition): قدّم التغذية الراجعة، واصفاً السلوكيات الظاهرة وأثرها. المشاركة (Engage): استكشفا أفكاراً للتحسين. والخطوات التالية (Next steps): التزما بإجراءات محددة وبالمتابعة. هذا الترتيب ثابت مع كل الأساليب، وما يتغير هو مقدار ما تقوله، ومقدار ما تسأل عنه. اضغط على كل حرف لمراجعته. ثم افتح النشاط السادس في الصفحة العاشرة، واكتب الافتتاحية التي ستستخدمها مع المندوب الذي اخترته في النشاط الثالث. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M3-18.jpg",
      "audio": "audio/M3-18.mp3",
      "transcript": "Well done. You have completed Module 3. Observe the tasks you planned to focus on and compare them with clear standards. Ask for the rep's view first. Give feedback on behaviour, never on judgment. Be Directive with Can't or Won't, Participative with Could, and Encouraging with Can. And structure every conversation with O.F.T.E.N. Complete the knowledge check, then move to the final module.",
-     "alt": "Module 3, screen 18: Module 3 summary"
+     "alt": "Module 3, screen 18: Module 3 summary",
+     "audio_ar": "audio/M3-18-ar.mp3",
+     "transcript_ar": "أحسنت، لقد أكملت الوحدة الثالثة. لاحظ المهام التي خططت للتركيز عليها، وقارنها بمعايير واضحة. اسأل المندوب عن رأيه أولاً. قدّم التغذية الراجعة على السلوك، لا على الأحكام. استخدم الأسلوب التوجيهي (Directive) مع مستوى «لا يستطيع» (CAN'T) أو «لا يرغب» (WON'T)، والأسلوب التشاركي (Participative) مع مستوى «يمكنه» (COULD)، والأسلوب التشجيعي (Encouraging) مع مستوى «يستطيع» (CAN). ونظّم كل محادثة باستخدام نموذج O.F.T.E.N.. أجب عن اختبار المعرفة، ثم انتقل إلى الوحدة الأخيرة."
     }
    ],
    "quiz": [
@@ -601,44 +687,58 @@ const DATA = {
      "img": "img/M4-01.jpg",
      "audio": "audio/M4-01.mp3",
      "transcript": "Welcome to Module 4: Evaluate, the final module. When you are ready, select Next to begin.",
-     "alt": "Module 4, screen 1: Evaluate: Keep Coaching Going"
+     "alt": "Module 4, screen 1: Evaluate: Keep Coaching Going",
+     "audio_ar": "audio/M4-01-ar.mp3",
+     "transcript_ar": "مرحباً بك في الوحدة الرابعة والأخيرة: التقييم. عندما تكون مستعداً، اضغط على زر التالي."
     },
     {
      "img": "img/M4-02.jpg",
      "audio": "audio/M4-02.mp3",
      "transcript": "The last stage of the process is to evaluate the rep's ongoing progress. You document your observations, then monitor and review progress with the rep. This is the stage most managers skip, and it is the reason so much coaching is forgotten by the next visit.",
-     "alt": "Module 4, screen 2: Evaluate: document and follow up"
+     "alt": "Module 4, screen 2: Evaluate: document and follow up",
+     "audio_ar": "audio/M4-02-ar.mp3",
+     "transcript_ar": "المرحلة الأخيرة في العملية هي تقييم تقدّم المندوب بصورة مستمرة. توثّق ملاحظاتك، ثم تتابع التقدم وتراجعه مع المندوب. وهذه هي المرحلة التي يتجاوزها معظم المديرين، وهي السبب في أن كثيراً من الكوتشينج يُنسى قبل الزيارة التالية."
     },
     {
      "img": "img/M4-03.jpg",
      "audio": "audio/M4-03.mp3",
      "transcript": "After each co-visit, use your co-visit form to record what you observed and what you agreed. Write down the tasks and behaviours you saw, not general comments like good call or needs improvement. Record the actions agreed, with dates. And keep it short. Reps don't like paperwork, and neither do managers. One clear page that both of you will actually use is better than four pages nobody reads. Remember, the form is a coaching tool. The conversation is what changes behaviour.",
-     "alt": "Module 4, screen 3: Document your observations for follow-up"
+     "alt": "Module 4, screen 3: Document your observations for follow-up",
+     "audio_ar": "audio/M4-03-ar.mp3",
+     "transcript_ar": "بعد كل زيارة مشتركة، استخدم نموذج الزيارة المشتركة لتسجيل ما لاحظته وما اتفقتما عليه. اكتب المهام والسلوكيات التي رأيتها، لا تعليقات عامة مثل «زيارة جيدة» أو «يحتاج إلى تحسين». وسجّل الخطوات المتفق عليها مع مواعيدها. واجعلها مختصرة، فالمندوبون لا يحبون الأوراق الكثيرة، والمديرون كذلك. صفحة واحدة واضحة تستخدمانها فعلاً أفضل من أربع صفحات لا يقرؤها أحد. وتذكّر أن النموذج أداة للكوتشينج، أما المحادثة فهي التي تغيّر السلوك."
     },
     {
      "img": "img/M4-04.jpg",
      "audio": "audio/M4-04.mp3",
      "transcript": "Coaching continuity means the conversation does not stop when you leave the territory. Check whether the agreed actions happened. Recognise progress quickly and specifically, because reinforcement is what makes new behaviour stick. Re-assess readiness, because as a rep grows from CAN'T to COULD to CAN on a task, your style should move from Directive to Participative to Encouraging. And the follow-up becomes the starting point for your next plan. That is how the cycle closes.",
-     "alt": "Module 4, screen 4: Create coaching continuity between visits"
+     "alt": "Module 4, screen 4: Create coaching continuity between visits",
+     "audio_ar": "audio/M4-04-ar.mp3",
+     "transcript_ar": "استمرارية الكوتشينج تعني أن المحادثة لا تنتهي حين تغادر المنطقة. تأكد من تنفيذ الخطوات المتفق عليها. وقدّر التقدم بسرعة وبشكل محدد، فالتقدير هو ما يُثبّت السلوك الجديد. وأعد تقييم الجاهزية، لأن المندوب حين يتطور في مهمة ما من مستوى «لا يستطيع» (CAN'T) إلى «يمكنه» (COULD) ثم إلى «يستطيع» (CAN)، ينبغي أن ينتقل أسلوبك من التوجيهي (Directive) إلى التشاركي (Participative) ثم إلى التشجيعي (Encouraging). والمتابعة تصبح نقطة البداية لخطتك التالية. وهكذا تكتمل الدائرة."
     },
     {
      "img": "img/M4-05.jpg",
      "audio": "audio/M4-05.mp3",
      "transcript": "Turn to Activity 7, My Follow-Up Plan. For the same rep you chose in Activity 3, write how you will follow up after the coaching conversation, and set dates for two check-ins. Then complete the short checklist on the same page, so you arrive at the workshop ready. When you are done, select Next to continue.",
      "alt": "Module 4, screen 5: My Follow-Up Plan",
-     "wb": "Activity 7: My Follow-Up Plan"
+     "wb": "Activity 7: My Follow-Up Plan",
+     "audio_ar": "audio/M4-05-ar.mp3",
+     "transcript_ar": "افتح النشاط السابع (My Follow-Up Plan). للمندوب نفسه الذي اخترته في النشاط الثالث، اكتب كيف ستتابع بعد محادثة الكوتشينج، وحدد موعدين للمتابعة. ثم أكمل قائمة المراجعة القصيرة في الصفحة نفسها، لتأتي إلى الورشة مستعداً. عندما تنتهي، اضغط على زر التالي."
     },
     {
      "img": "img/M4-06.jpg",
      "audio": "audio/M4-06.mp3",
      "transcript": "Let's sum up. Coaching follows three stages: Plan, Implement and Evaluate. You plan by reviewing data and assessing readiness by task, using demonstrated ability and willingness. You implement by observing, asking for the rep's view, giving behaviour-based feedback with the right style, Directive, Participative or Encouraging, structured with O.F.T.E.N. And you evaluate by documenting and following up. This e-learning is only an introduction. Coaching is not a one time event, and it does not only happen around customer calls. It is part of every conversation you have with your team.",
-     "alt": "Module 4, screen 6: Key concepts"
+     "alt": "Module 4, screen 6: Key concepts",
+     "audio_ar": "audio/M4-06-ar.mp3",
+     "transcript_ar": "لنلخّص. للكوتشينج ثلاث مراحل: التخطيط، والتنفيذ، والتقييم. تخطط بمراجعة البيانات وتقييم الجاهزية مهمةً بمهمة، استناداً إلى القدرة والرغبة اللتين ظهرتا فعلياً. وتنفذ بالملاحظة، وسؤال المندوب عن رأيه، وتقديم تغذية راجعة مبنية على السلوك بالأسلوب المناسب، التوجيهي (Directive) أو التشاركي (Participative) أو التشجيعي (Encouraging)، ومنظّمة وفق نموذج O.F.T.E.N.. وتقيّم بالتوثيق والمتابعة. هذا البرنامج الإلكتروني مجرد مقدمة. فالكوتشينج ليس حدثاً يقع مرة واحدة، ولا يقتصر على زيارات العملاء، بل هو جزء من كل محادثة بينك وبين فريقك."
     },
     {
      "img": "img/M4-07.jpg",
      "audio": "audio/M4-07.mp3",
      "transcript": "Thank you for completing the pre-work. Please bring your completed workbook to the workshop, including the plan for one real rep from Activity 3. In the workshop we will practise real coaching conversations, so come ready to take part. Complete the final knowledge check to receive your certificate. See you soon.",
-     "alt": "Module 4, screen 7: See you in the workshop"
+     "alt": "Module 4, screen 7: See you in the workshop",
+     "audio_ar": "audio/M4-07-ar.mp3",
+     "transcript_ar": "شكراً لإكمالك العمل التحضيري. أحضِر كراسة التدريب مكتملة إلى الورشة، ومعها خطة المندوب الحقيقي من النشاط الثالث. في الورشة سنتدرّب على محادثات كوتشينج حقيقية، فاحضر مستعداً للمشاركة. أجب عن اختبار المعرفة الأخير لتحصل على شهادتك. نراك قريباً."
     }
    ],
    "quiz": [

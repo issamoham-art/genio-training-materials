@@ -15,6 +15,19 @@ const KEY='genio_elearn_'+(DATA.build||'v1');
 let P=JSON.parse(localStorage.getItem(KEY)||'{}');
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(P));}catch(e){/* storage blocked — course still works, just no resume */}};
 let mi=0,si=0,showTr=SET.transcript,dwell=null,failTimer=null,safety=null;
+/* ---------- optional narration languages: DATA.languages=[{code,label,dir}], slide fields audio_<code>, transcript_<code> ---------- */
+const LANGS=(DATA.languages&&DATA.languages.length>1)?DATA.languages:null;
+let LANG=LANGS?LANGS[0].code:'';
+try{const v=localStorage.getItem('genio_lang');if(LANGS&&LANGS.some(l=>l.code===v))LANG=v;}catch(e){}
+const LX=(s,f)=>(LANGS&&LANG!==LANGS[0].code&&s[f+'_'+LANG])||s[f];
+const LDIR=()=>{const l=LANGS&&LANGS.find(x=>x.code===LANG);return (l&&l.dir)||'ltr';};
+function renderLang(){
+  if(!LANGS)return;
+  const html=`<span class="langlbl">Narration</span>`+LANGS.map(l=>`<button class="langbtn${l.code===LANG?' on':''}" data-l="${l.code}" ${l.dir?`dir="${l.dir}"`:''}>${l.label}</button>`).join('');
+  ['langSel','langHome'].forEach(id=>{const el=$(id);if(!el)return;el.classList.remove('hide');el.innerHTML=html;
+    el.querySelectorAll('.langbtn').forEach(b=>b.onclick=()=>{LANG=b.dataset.l;try{localStorage.setItem('genio_lang',LANG);}catch(e){}
+      renderLang(); if(!$('play').classList.contains('hide'))show();});});
+}
 const audio=new Audio(); audio.preload='auto';
 
 /* ---------- one-time chrome from DATA.course ---------- */
@@ -75,16 +88,17 @@ function show(){
   const m=DATA.modules[mi],s=m.slides[si];
   $('pTitle').textContent=`Module ${m.id} · ${m.title}`;
   $('slide').src=s.img; $('slide').alt=s.alt||`Module ${m.id}, screen ${si+1}`;
-  $('trt').textContent=s.transcript||'';
-  $('tr').classList.toggle('hide',!SET.transcript||!s.transcript);
-  $('ttog').classList.toggle('hide',!SET.transcript||!s.transcript);
+  const tx=LX(s,'transcript'), au=LX(s,'audio');
+  $('trt').textContent=tx||''; $('trt').dir=LDIR();
+  $('tr').classList.toggle('hide',!SET.transcript||!tx);
+  $('ttog').classList.toggle('hide',!SET.transcript||!tx);
   $('pos').textContent=`Screen ${si+1} of ${m.slides.length}`;
   $('prog').style.width=((si+1)/m.slides.length*100)+'%';
   $('prev').disabled=si===0; $('next').disabled=si===m.slides.length-1;
   $('toQuiz').classList.toggle('hide',si!==m.slides.length-1);
-  $('pp').classList.toggle('hide',!s.audio);           // hide play button on silent screens
+  $('pp').classList.toggle('hide',!au);           // hide play button on silent screens
   audio.pause();
-  if(s.audio){ audio.src=s.audio; }                    // attach narration
+  if(au){ audio.src=au; }                    // attach narration
   else { audio.removeAttribute('src'); audio.load(); } // silent screen: no bogus empty src (which would resolve to the page URL and error)
   $('pp').innerHTML='&#9654;';
   renderPanel(s);
@@ -95,14 +109,14 @@ function show(){
   if(safety){clearTimeout(safety);safety=null;}
   gate();
   if(SET.gate && !seen().includes(si)){
-    if(!s.audio){dwell=setTimeout(markSeen,6000);}      // silent screen: short dwell then unlock
+    if(!au){dwell=setTimeout(markSeen,6000);}      // silent screen: short dwell then unlock
     // safety net: never trap a learner, whatever happens to the audio
     safety=setTimeout(()=>{ if(!seen().includes(si)){
         $('lock').innerHTML='<b>&#9432;</b> you can continue, or press play to hear this screen';
         markSeen(); } }, 60000);
   } else if(!SET.gate && !seen().includes(si)){ markSeen(); }
   P[m.id]=Object.assign(P[m.id]||{},{slide:si}); save();
-  if(s.audio) startAudio();                             // auto-play this screen's narration
+  if(au) startAudio();                             // auto-play this screen's narration
 }
 function renderHero(s){
   const el=$('wbhero');
@@ -288,3 +302,4 @@ $('reset').onclick=()=>{ if(confirm('Clear your progress and quiz scores?')){P={
 initChrome();
 if(CERT && P.name && $('learner'))$('learner').value=P.name;
 renderHome();
+renderLang();
