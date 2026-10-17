@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>e-Learning</title>
+<link rel="stylesheet" href="style.css"></head><body>
+
+<!-- Header chrome is filled from DATA.course by app.js -->
+<header><div class="wrap"><h1 id="hTitle"></h1>
+<span class="tag" id="hTag"></span></div></header>
+
+<!-- ===================== HOME / MODULE MENU ===================== -->
+<main id="home"><div class="wrap">
+ <div class="card hero">
+  <div><h2 id="heroH"></h2>
+   <div id="heroP"></div>
+   <div class="meta"><div><b id="mCount">0</b>modules</div><div><b id="sCount">0</b>screens</div><div><b id="minCount">0</b>minutes</div></div>
+  </div><img id="cover" alt=""></div>
+ <div class="mods" id="mods"></div>
+ <div style="text-align:center;margin:8px 0 24px"><button class="btn sec" id="reset">Reset my progress</button></div>
+</div></main>
+
+<!-- ===================== PLAYER ===================== -->
+<div id="play" class="hide"><div class="wrap">
+ <div style="display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap">
+  <button class="btn sec" id="back">&larr; All modules</button>
+  <strong id="pTitle" style="color:var(--navy)"></strong></div>
+ <div class="card stage">
+  <img id="slide" alt="">
+  <div class="bar"><i id="prog"></i></div>
+  <div class="ctl">
+   <button class="icon" id="prev" title="Previous screen" aria-label="Previous screen">&#9664;</button>
+   <button class="icon play" id="pp" title="Play or pause narration" aria-label="Play or pause narration">&#9654;</button>
+   <button class="icon" id="next" title="Next screen" aria-label="Next screen">&#9654;&#9654;</button>
+   <button class="btn sec" id="ttog">Hide transcript</button>
+   <span class="lock hide" id="lock" role="status" aria-live="polite"></span><span class="pos" id="pos"></span></div>
+  <div id="wbhero" class="wbhero hide"></div>
+  <div id="wb" class="wb hide"></div>
+  <div id="panel" class="hide"></div>
+  <div class="tr" id="tr"><h4>Narration</h4><div id="trt"></div></div>
+ </div>
+ <div style="text-align:right;margin:14px 0 26px"><button class="btn" id="toQuiz">Go to knowledge check &rarr;</button></div>
+</div></div>
+
+<!-- ===================== KNOWLEDGE CHECK ===================== -->
+<div id="quiz" class="hide"><div class="wrap"><div class="card quiz">
+ <h2 id="qTitle"></h2><p style="color:var(--mut);margin-bottom:6px">Answer all questions, then submit. You can retake it.</p>
+ <div id="qs"></div>
+ <button class="btn" id="submit">Submit answers</button>
+ <div id="res" class="hide"></div>
+</div></div></div>
+
+<!-- ===================== COMPLETION / CERTIFICATE ===================== -->
+<div id="done" class="hide"><div class="wrap"><div class="card score">
+ <div class="big">&#10003;</div><h2 style="color:var(--navy);margin:8px 0">e-Learning complete</h2>
+ <p id="doneMsg" style="color:var(--mut);max-width:520px;margin:0 auto 18px"></p>
+ <div id="certUI">
+  <div class="namebox"><label for="learner">Enter your full name as it should appear on the certificate</label>
+   <input id="learner" type="text" autocomplete="name" placeholder="e.g. Ramy Emad Abdelwahed"></div>
+  <button class="btn" id="makeCert">Generate my certificate</button>
+ </div>
+ <button class="btn sec" id="homeBtn">Back to modules</button>
+ <div id="certWrap" class="hide"></div>
+ <div id="certActions" class="hide" style="margin-top:14px">
+   <button class="btn" id="printCert">Download / print as PDF</button>
+   <button class="btn sec" id="editName">Change name</button></div></div></div></div>
+
+<footer id="foot"></footer>
+
+<!-- Course content first, then the engine -->
+<script src="course.js"></script>
+<script src="app.js"></script>
+</body></html>
