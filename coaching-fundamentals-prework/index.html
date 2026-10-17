@@ -58,13 +58,16 @@
  <div id="certUI">
   <div class="namebox"><label for="learner">Enter your full name as it should appear on the certificate</label>
    <input id="learner" type="text" autocomplete="name" placeholder="Type your full name, e.g. Ahmed Samir Hassan"></div>
+  <div class="namebox hide" id="emailBox"><label for="learnerEmail">Your work email (your result is sent to your trainer)</label>
+   <input id="learnerEmail" type="email" autocomplete="email" placeholder="name@company.com"></div>
   <button class="btn" id="makeCert">Generate my certificate</button>
  </div>
  <button class="btn sec" id="homeBtn">Back to modules</button>
  <div id="certWrap" class="hide"></div>
  <div id="certActions" class="hide" style="margin-top:14px">
    <button class="btn" id="printCert">Download / print as PDF</button>
-   <button class="btn sec" id="editName">Change name</button></div></div></div></div>
+   <button class="btn sec" id="editName">Change name</button></div>
+ <p id="repMsg" class="hide" style="margin-top:12px;font-size:14px;color:var(--navy)"></p></div></div></div>
 
 <footer id="foot"></footer>
 

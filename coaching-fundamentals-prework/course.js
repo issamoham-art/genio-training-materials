@@ -46,6 +46,12 @@ const DATA = {
    "Answer Key": 12
   }
  },
+ "report": {
+  "url": "https://yhpetiytyenkgmwhjmyt.supabase.co",
+  "key": "sb_publishable_d1ToOdNTLOMraST6av5s_A_if9ieiqF",
+  "table": "elearn_completions",
+  "course": "Coaching Fundamentals: Essential Concepts (Pharo Pharma)"
+ },
  "certificate": {
   "prefix": "GTD-PHR-CF-2026",
   "org": "Pharo Pharma",

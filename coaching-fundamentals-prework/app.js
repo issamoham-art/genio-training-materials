@@ -276,21 +276,52 @@ function buildCert(name){
    <div class="foot">Issued by ${c.brandName||'Genio Talent Development'} &nbsp;&middot;&nbsp; Certificate No: ${certNo(name)} &nbsp;&middot;&nbsp; Date of Issue: ${date}</div>
   </div>`;
 }
+/* ---------- optional completion reporting: DATA.report={url,key,table,course} ---------- */
+const REP=DATA.report||null;
+const PKEY=KEY+'_pending';
+function getPending(){try{return JSON.parse(localStorage.getItem(PKEY)||'[]');}catch(e){return [];}}
+function setPending(a){try{localStorage.setItem(PKEY,JSON.stringify(a));}catch(e){}}
+function postResult(rec){
+  return fetch(REP.url.replace(/\/$/,'')+'/rest/v1/'+(REP.table||'elearn_completions'),{method:'POST',
+    headers:{'apikey':REP.key,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(rec)})
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return true;});
+}
+function flushPending(showMsg){
+  if(!REP)return Promise.resolve();
+  const list=getPending(); if(!list.length)return Promise.resolve();
+  return Promise.all(list.map(rec=>postResult(rec).then(()=>null).catch(()=>rec))).then(left=>{
+    left=left.filter(Boolean); setPending(left);
+    if(showMsg&&$('repMsg')){$('repMsg').classList.remove('hide');
+      $('repMsg').innerHTML=left.length?'&#9888; Your result could not be sent right now (no connection?). It will be sent automatically next time you open this course.'
+        :'&#10003; Your result has been recorded with Genio Talent Development.';}
+  });
+}
+if(REP&&$('emailBox'))$('emailBox').classList.remove('hide');
 if($('makeCert')) $('makeCert').onclick=()=>{
   const n=($('learner').value||'').trim();
   if(n.length<3){alert('Please enter your full name as it should appear on the certificate.');$('learner').focus();return;}
+  let em='';
+  if(REP){em=($('learnerEmail').value||'').trim().toLowerCase();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){alert('Please enter your work email address.');$('learnerEmail').focus();return;}}
   const notdone=DATA.modules.filter(x=>(P[x.id]||{}).quiz===undefined);
   if(notdone.length){alert('Finish every module and its knowledge check first.');return;}
-  P.name=n; save();
+  P.name=n; if(em)P.email=em; save();
   $('certWrap').innerHTML=buildCert(n);
   $('certWrap').classList.remove('hide'); $('certActions').classList.remove('hide');
-  $('makeCert').classList.add('hide'); $('learner').parentElement.classList.add('hide');
+  $('makeCert').classList.add('hide'); document.querySelectorAll('#certUI .namebox').forEach(x=>x.classList.add('hide'));
+  if(REP){
+    const scores={},max={};DATA.modules.forEach(m=>{scores[m.id]=(P[m.id]||{}).quiz||0;max[m.id]=m.quiz.length;});
+    const tot=Object.values(scores).reduce((a,b)=>a+b,0), mx=Object.values(max).reduce((a,b)=>a+b,0);
+    const rec={course:REP.course||DATA.course.title,build:DATA.build||'',name:n,email:em,scores:scores,max_scores:max,
+      total:tot,max_total:mx,cert_no:certNo(n),narration:LANG||'en',client_time:new Date().toISOString()};
+    setPending(getPending().concat([rec])); flushPending(true);
+  }
   $('certWrap').scrollIntoView({behavior:'smooth'});
 };
 if($('printCert')) $('printCert').onclick=()=>window.print();
 if($('editName')) $('editName').onclick=()=>{
   $('certWrap').classList.add('hide'); $('certActions').classList.add('hide');
-  $('makeCert').classList.remove('hide'); $('learner').parentElement.classList.remove('hide');
+  $('makeCert').classList.remove('hide'); document.querySelectorAll('#certUI .namebox').forEach(x=>{if(x.id!=='emailBox'||REP)x.classList.remove('hide');});
   $('learner').focus();
 };
 
@@ -301,5 +332,7 @@ $('reset').onclick=()=>{ if(confirm('Clear your progress and quiz scores?')){P={
 /* ---------- boot ---------- */
 initChrome();
 if(CERT && P.name && $('learner'))$('learner').value=P.name;
+if(P.email && $('learnerEmail'))$('learnerEmail').value=P.email;
+flushPending(false);
 renderHome();
 renderLang();
